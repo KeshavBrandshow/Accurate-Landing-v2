@@ -254,11 +254,13 @@ window.prevSlide = function () {
 
 // Institutional Portfolio Slider (GSAP)
 const portfolioImages = [
-    "https://www.accurate.in/img/diksharambh-orientation-event-collage.webp",
-    "https://www.accurate.in/img/international-exposure/singapore-visit.webp",
-    "https://www.accurate.in/img/devi-award.webp",
-    "https://www.accurate.in/img/most-admired-law-college.webp",
-    "https://www.accurate.in/img/accurate-naac-banner.webp",
+    "./images/gallery/fresher-party-9.webp",
+    "./images/gallery/garba-4.webp",
+    "./images/gallery/orientation-21.webp",
+    "./images/gallery/placements-5.webp",
+    "./images/gallery/social-activities-9.webp",
+    "./images/gallery/staff-welfare-program-26.webp",
+    "./images/gallery/udaan-orientation-7.webp"
 ];
 
 let portfolioIndex = 0;
@@ -271,20 +273,20 @@ function updatePortfolioSlides() {
     slideElements[1].src = portfolioImages[(portfolioIndex + 1) % portfolioImages.length];
     slideElements[2].src = portfolioImages[(portfolioIndex + 2) % portfolioImages.length];
 
-    if (typeof gsap !== 'undefined') {
-        gsap.fromTo(
-            ".slide",
-            { x: 100, opacity: 0, scale: 0.95 },
-            {
-                x: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 0.8,
-                ease: "power3.out",
-                stagger: 0.1,
-            }
-        );
-    }
+    // if (typeof gsap !== 'undefined') {
+    //     gsap.fromTo(
+    //         ".slide",
+    //         { x: 100, opacity: 0, scale: 0.95 },
+    //         {
+    //             x: 0,
+    //             opacity: 1,
+    //             scale: 1,
+    //             duration: 0.8,
+    //             ease: "power3.out",
+    //             stagger: 0.1,
+    //         }
+    //     );
+    // }
 }
 
 const nextBtn = document.getElementById("nextBtn");
