@@ -1117,6 +1117,241 @@
 
     <!-- ----------------------------------------HERO SECTION ENDS---------------------------------------- -->
 
+
+        <!-- ===================== EXPLORE OUR STREAMS SECTION ===================== -->
+    <style>
+        .stream-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .stream-card:hover {
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        .stream-card:hover .stream-stripe {
+            height: 100%;
+        }
+
+        .stream-stripe {
+            transition: height 0.5s ease;
+        }
+
+        .stream-card:hover .stream-arrow {
+            transform: translateX(4px);
+            opacity: 1;
+        }
+
+        .stream-arrow {
+            transition: all 0.3s ease;
+            opacity: 0.5;
+        }
+
+        .bento-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .bento-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <section class="py-8 md:py-12 relative overflow-hidden bg-white" style="min-height: 80vh;">
+        <!-- Asymmetric background split -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-[#f0f4ff] hidden lg:block"
+            style="clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);"></div>
+        <div class="absolute bottom-0 left-0 w-40 h-40 bg-[#FFB800]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="w-full px-4 sm:px-6 lg:px-20 relative z-10">
+
+            <!-- Header — left-aligned on desktop for a non-template feel -->
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 md:mb-14 gap-4">
+                <div class="max-w-2xl">
+                    <p class="text-[#2563eb] font-bold text-sm uppercase tracking-[0.2em] mb-2">What We Offer</p>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-[#003399] leading-tight">
+                        Explore Our<br class="hidden md:block" />
+                        <span class="relative inline-block">
+                            <span class="relative z-10">Academic Streams</span>
+                            <span class="absolute bottom-1 left-0 w-full h-3 bg-[#FFB800]/25 -z-0 rounded-sm"></span>
+                        </span>
+                    </h2>
+                </div>
+                <p class="text-slate-500 text-sm md:text-base max-w-md lg:text-right leading-relaxed">
+                    From engineering to pharmacy, management to law — discover the pathway that shapes your career.
+                </p>
+            </div>
+
+            <!-- Bento-style Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+
+                <!-- FEATURED: Engineering — spans 2 cols -->
+                <div
+                    class="stream-card lg:col-span-2 group relative bg-gradient-to-br from-[#003399] to-[#1e40af] rounded-2xl p-7 md:p-8 cursor-pointer overflow-hidden min-h-[200px] flex flex-col justify-end">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/3 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 w-12 h-12 border border-white/20 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-microchip text-white/60 text-lg"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <span
+                            class="inline-block px-3 py-1 bg-[#FFB800] text-[#003399] text-[10px] font-black uppercase tracking-wider rounded-full mb-3">Most
+                            Popular</span>
+                        <h3 class="text-white text-2xl md:text-3xl font-extrabold mb-2">Engineering & Technology</h3>
+                        <p class="text-blue-200/80 text-sm mb-4 max-w-md">B.Tech in CSE, IT, ME, CE, EE & more — with
+                            specializations in AI, Data Science, and Cloud Computing.</p>
+                        <div class="flex items-center gap-4 text-xs text-blue-200/60">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 4 Years</span>
+                            <span><i class="fa-solid fa-graduation-cap mr-1"></i> B.Tech</span>
+                            <span class="stream-arrow text-[#FFB800] font-bold">Explore →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Management -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-[#FFB800] rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-[#FFB800]/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-chart-line text-[#FFB800] text-lg"></i>
+                        </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Management</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">PGDM, MBA & BBA — leadership-focused
+                            programs with industry mentoring.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>2-3 Years</span>
+                            <span class="stream-arrow text-[#FFB800] font-bold text-xs normal-case">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computer Applications -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-[#2563eb] rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-laptop-code text-[#2563eb] text-lg"></i>
+                        </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Computer Applications</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">BCA & MCA — build full-stack, cloud & app
+                            development expertise.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>3 Years</span>
+                            <span class="stream-arrow text-[#2563eb] font-bold text-xs normal-case">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pharmacy -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-emerald-500 rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-emerald-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-capsules text-emerald-500 text-lg"></i>
+                        </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Pharmacy</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">B.Pharm, D.Pharm & M.Pharm — PCI approved
+                            with advanced labs.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>2-4 Years</span>
+                            <span class="stream-arrow text-emerald-500 font-bold text-xs normal-case">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FEATURED: Law — spans 2 cols -->
+                <div
+                    class="stream-card lg:col-span-2 group relative bg-gradient-to-br from-[#1e40af] to-[#2563eb] rounded-2xl p-7 md:p-8 cursor-pointer overflow-hidden min-h-[180px] flex flex-col justify-end">
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 border border-white/10 rounded-full -translate-y-1/3 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 w-12 h-12 border border-white/15 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-scale-balanced text-[#FFB800]/60 text-lg"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-white text-2xl font-extrabold mb-2">Law & Legal Studies</h3>
+                        <p class="text-blue-100/70 text-sm mb-3 max-w-md">BCI-approved integrated & regular law programs
+                            preparing future legal professionals & advocates.</p>
+                        <div class="flex items-center gap-4 text-xs text-blue-200/60">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 3-5 Years</span>
+                            <span><i class="fa-solid fa-graduation-cap mr-1"></i> BA LLB / LLB</span>
+                            <span class="stream-arrow text-[#FFB800] font-bold">Explore →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commerce -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-violet-500 rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-violet-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-coins text-violet-500 text-lg"></i>
+                        </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Commerce</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">B.Com (Hons) — accounting, finance &
+                            taxation with CA/CS foundation.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>3 Years</span>
+                            <span class="stream-arrow text-violet-500 font-bold text-xs normal-case">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polytechnic -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-orange-500 rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-gear text-orange-500 text-lg"></i>
+                        </div>
+                        <h3 class="text-slate-900 font-extrabold text-lg mb-1">Polytechnic</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">Diploma in Engineering — hands-on
+                            technical training after 10th.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>3 Years</span>
+                            <span class="stream-arrow text-orange-500 font-bold text-xs normal-case">→</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA strip -->
+            <div
+                class="mt-8 flex flex-col sm:flex-row items-center justify-between bg-slate-50 rounded-xl p-5 md:p-6 gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-phone text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <p class="text-[#003399] font-bold text-sm">Not sure which stream is right for you?</p>
+                        <p class="text-slate-400 text-xs">Talk to our counsellors — we'll help you find the perfect fit.
+                        </p>
+                    </div>
+                </div>
+                <a href="https://admissions.accurate.in/" target="_blank"
+                    class="px-6 py-3 bg-[#2563eb] hover:bg-[#1e40af] text-white rounded-lg font-bold text-sm transition-all duration-300 flex-shrink-0 hover:scale-105">
+                    Get Counselling <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ===================== EXPLORE OUR STREAMS SECTION ENDS ===================== -->
+
     <!-- ----------------------------------------WHY ACCURETE SECTION ENDS---------------------------------------- -->
 
     <section class="bg-slate-50 py-20 px-6 lg:px-24 relative overflow-hidden">
