@@ -742,7 +742,7 @@
                 Your browser does not support the video tag.
             </video>
             <!-- Overlay -->
-            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 bg-black/50"></div>
         </div>
 
         <div class="container mx-auto relative z-10">
@@ -807,6 +807,500 @@
         </div>
     </section>
 
+    <!-- ----------------------------------------WELCOME TO ACCURATE SECTION---------------------------------------- -->
+
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes float-slow {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .welcome-card:hover .welcome-icon {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        .welcome-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-slow {
+            animation: float-slow 8s ease-in-out infinite;
+        }
+
+        .animate-gradient {
+            animation: gradient-shift 8s ease infinite;
+            background-size: 200% 200%;
+        }
+    </style>
+
+    <section class="py-8 md:py-12 relative overflow-hidden"
+        style="min-height: 80vh; background: linear-gradient(135deg, #f8faff 0%, #ffffff 30%, #f0f4ff 60%, #fff9eb 100%);">
+
+        <!-- Decorative floating shapes -->
+        <div
+            class="absolute top-20 left-10 w-20 h-20 md:w-32 md:h-32 rounded-full border-[3px] border-[#2563eb]/10 animate-float pointer-events-none">
+        </div>
+        <div
+            class="absolute top-40 right-16 w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-[#FFB800]/8 rotate-12 animate-float-slow pointer-events-none">
+        </div>
+        <div class="absolute bottom-32 left-20 w-12 h-12 md:w-20 md:h-20 rounded-xl bg-[#2563eb]/6 -rotate-12 animate-float-slow pointer-events-none"
+            style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/3 right-1/4 w-3 h-3 rounded-full bg-[#FFB800]/30 animate-float pointer-events-none"
+            style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-4 h-4 rounded-full bg-[#2563eb]/20 animate-float pointer-events-none"
+            style="animation-delay: 3s;"></div>
+        <div class="absolute top-16 left-1/2 w-2 h-2 rounded-full bg-[#FFB800]/40 animate-float pointer-events-none"
+            style="animation-delay: 4s;"></div>
+
+        <!-- Gradient mesh blobs -->
+        <div
+            class="absolute -top-40 -right-40 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-blue-100/40 to-blue-50/20 blur-3xl pointer-events-none">
+        </div>
+        <div
+            class="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-yellow-100/30 to-orange-50/10 blur-3xl pointer-events-none">
+        </div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-blue-50/20 to-transparent blur-3xl pointer-events-none">
+        </div>
+
+        <div class="w-full px-4 sm:px-6 lg:px-20 relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center mb-5 md:mb-8 max-w-4xl mx-auto">
+                <!-- <div class="inline-flex items-center gap-2 px-5 py-2 bg-white border border-blue-100 rounded-full shadow-sm mb-3">
+                    <div class="w-2 h-2 rounded-full bg-[#2563eb] animate-pulse"></div>
+                    <span class="text-[#2563eb] text-sm font-bold uppercase tracking-widest">About Us</span>
+                </div> -->
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                    <span class="text-slate-900">Welcome to </span>
+                    <span
+                        class="bg-gradient-to-r from-[#2563eb] to-[#1e40af] bg-clip-text text-transparent">Accurate</span>
+                </h2>
+                <p class="text-base md:text-xl font-semibold text-slate-500 mt-2">
+                    Group of Institutions, Greater Noida
+                </p>
+                <div class="flex items-center justify-center gap-3 mt-4">
+                    <div class="w-12 h-1 bg-gradient-to-r from-transparent to-[#FFB800] rounded-full"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#2563eb] relative">
+                        <div class="absolute inset-0 rounded-full bg-[#2563eb] animate-ping opacity-30"></div>
+                    </div>
+                    <div class="w-24 h-1.5 bg-gradient-to-r from-[#2563eb] to-[#1e40af] rounded-full"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#FFB800] relative">
+                        <div class="absolute inset-0 rounded-full bg-[#FFB800] animate-ping opacity-30"></div>
+                    </div>
+                    <div class="w-12 h-1 bg-gradient-to-l from-transparent to-[#FFB800] rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Description Card with Glassmorphism -->
+            <div class="max-w-5xl mx-auto mb-8 md:mb-10 relative">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-[#2563eb]/20 via-[#FFB800]/10 to-[#2563eb]/20 rounded-3xl blur-lg opacity-60">
+                </div>
+                <div
+                    class="relative bg-white/80 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/50 shadow-xl">
+                    <div class="absolute top-4 right-6 flex items-center gap-2">
+                        <div class="relative">
+                            <div class="w-10 h-10 bg-[#FFB800] rounded-full flex items-center justify-center">
+                                <i class="fa-solid fa-award text-white text-sm"></i>
+                            </div>
+                            <div class="absolute inset-0 rounded-full border-2 border-[#FFB800]"
+                                style="animation: pulse-ring 2s ease-out infinite;"></div>
+                        </div>
+                        <span
+                            class="text-[#003399] font-extrabold text-xs uppercase tracking-wider hidden sm:block">NAAC
+                            Accredited</span>
+                    </div>
+                    <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-2">
+                        Accurate Group of Institutions, established in <strong class="text-[#2563eb]">2006</strong>, is
+                        a leading educational hub in Greater
+                        Noida dedicated to academic excellence, holistic development, and career-focused learning. Our
+                        group encompasses multiple prestigious institutions offering programs in <strong
+                            class="text-[#003399]">Management, Engineering,
+                            Pharmacy, Architecture, Law,</strong> and <strong class="text-[#003399]">Commerce</strong>.
+                    </p>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">
+                        With world-class infrastructure, experienced faculty, and a strong industry network, we prepare
+                        students to become future-ready professionals who are equipped to lead and innovate across
+                        diverse sectors. Our commitment to excellence has made us one of the most sought-after
+                        educational destinations in North India.
+                    </p>
+                    <!-- Decorative corner accents -->
+                    <div
+                        class="absolute top-0 left-0 w-16 h-16 border-t-[3px] border-l-[3px] border-[#2563eb]/30 rounded-tl-2xl">
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 w-16 h-16 border-b-[3px] border-r-[3px] border-[#FFB800]/30 rounded-br-2xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Highlights - Premium Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-8 md:mb-10">
+                <!-- Card 1 -->
+                <div class="welcome-card relative rounded-2xl p-[2px] bg-gradient-to-br from-[#2563eb]/30 via-blue-100/50 to-[#2563eb]/10 transition-all duration-500 cursor-default"
+                    style="transition: transform 0.5s ease;">
+                    <div class="bg-white rounded-[14px] p-5 h-full text-center relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-[60px]">
+                        </div>
+                        <div
+                            class="welcome-icon mx-auto mb-3 w-[56px] h-[56px] bg-gradient-to-br from-[#2563eb] to-[#1e40af] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-300/40 transition-all duration-500 relative z-10">
+                            <i class="fa-solid fa-graduation-cap text-white text-lg"></i>
+                        </div>
+                        <h4 class="text-[#003399] font-extrabold text-sm mb-1 relative z-10">Industry-Aligned Curriculum
+                        </h4>
+                        <p class="text-slate-500 text-xs leading-relaxed relative z-10">Programs designed with direct
+                            industry inputs to ensure job-readiness from day one.</p>
+                        <div class="mt-2 flex items-center justify-center gap-1">
+                            <div class="w-1 h-1 rounded-full bg-[#2563eb]"></div>
+                            <div class="w-6 h-0.5 rounded-full bg-[#2563eb]/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-[#2563eb]"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="welcome-card relative rounded-2xl p-[2px] bg-gradient-to-br from-[#FFB800]/30 via-yellow-100/50 to-[#FFB800]/10 transition-all duration-500 cursor-default"
+                    style="transition: transform 0.5s ease;">
+                    <div class="bg-white rounded-[14px] p-5 h-full text-center relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-yellow-50 to-transparent rounded-bl-[60px]">
+                        </div>
+                        <div
+                            class="welcome-icon mx-auto mb-3 w-[56px] h-[56px] bg-gradient-to-br from-[#FFB800] to-[#e6a600] rounded-2xl flex items-center justify-center shadow-lg shadow-yellow-300/40 transition-all duration-500 relative z-10">
+                            <i class="fa-solid fa-briefcase text-white text-lg"></i>
+                        </div>
+                        <h4 class="text-[#003399] font-extrabold text-sm mb-1 relative z-10">100% Placement Assistance
+                        </h4>
+                        <p class="text-slate-500 text-xs leading-relaxed relative z-10">Dedicated placement cell with a
+                            strong recruiter network across India and abroad.</p>
+                        <div class="mt-2 flex items-center justify-center gap-1">
+                            <div class="w-1 h-1 rounded-full bg-[#FFB800]"></div>
+                            <div class="w-6 h-0.5 rounded-full bg-[#FFB800]/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-[#FFB800]"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="welcome-card relative rounded-2xl p-[2px] bg-gradient-to-br from-[#2563eb]/30 via-blue-100/50 to-[#2563eb]/10 transition-all duration-500 cursor-default"
+                    style="transition: transform 0.5s ease;">
+                    <div class="bg-white rounded-[14px] p-5 h-full text-center relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-[60px]">
+                        </div>
+                        <div
+                            class="welcome-icon mx-auto mb-3 w-[56px] h-[56px] bg-gradient-to-br from-[#2563eb] to-[#1e40af] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-300/40 transition-all duration-500 relative z-10">
+                            <i class="fa-solid fa-flask text-white text-lg"></i>
+                        </div>
+                        <h4 class="text-[#003399] font-extrabold text-sm mb-1 relative z-10">State-of-the-Art Labs</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed relative z-10">Modern laboratories and
+                            facilities designed for practical, hands-on learning experiences.</p>
+                        <div class="mt-2 flex items-center justify-center gap-1">
+                            <div class="w-1 h-1 rounded-full bg-[#2563eb]"></div>
+                            <div class="w-6 h-0.5 rounded-full bg-[#2563eb]/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-[#2563eb]"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="welcome-card relative rounded-2xl p-[2px] bg-gradient-to-br from-[#FFB800]/30 via-yellow-100/50 to-[#FFB800]/10 transition-all duration-500 cursor-default"
+                    style="transition: transform 0.5s ease;">
+                    <div class="bg-white rounded-[14px] p-5 h-full text-center relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-yellow-50 to-transparent rounded-bl-[60px]">
+                        </div>
+                        <div
+                            class="welcome-icon mx-auto mb-3 w-[56px] h-[56px] bg-gradient-to-br from-[#FFB800] to-[#e6a600] rounded-2xl flex items-center justify-center shadow-lg shadow-yellow-300/40 transition-all duration-500 relative z-10">
+                            <i class="fa-solid fa-users text-white text-lg"></i>
+                        </div>
+                        <h4 class="text-[#003399] font-extrabold text-sm mb-1 relative z-10">Experienced Faculty</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed relative z-10">PhD holders and industry
+                            professionals delivering knowledge with real-world expertise.</p>
+                        <div class="mt-2 flex items-center justify-center gap-1">
+                            <div class="w-1 h-1 rounded-full bg-[#FFB800]"></div>
+                            <div class="w-6 h-0.5 rounded-full bg-[#FFB800]/30"></div>
+                            <div class="w-1 h-1 rounded-full bg-[#FFB800]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4 mb-8 md:mb-10">
+                <a href="https://www.accurate.in/about/accurate-group-of-institutions/" target="_blank"
+                    class="group relative bg-gradient-to-r from-[#2563eb] to-[#1e40af] text-white px-10 py-4 rounded-xl font-bold text-sm transition-all duration-300 flex items-center gap-3 shadow-xl shadow-blue-300/30 hover:shadow-blue-400/40 hover:scale-105">
+                    <span>Know More About Us</span>
+                    <span
+                        class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all">
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </span>
+                </a>
+                <a href="https://admissions.accurate.in/" target="_blank"
+                    class="group relative px-10 py-4 rounded-xl font-bold text-sm transition-all duration-300 flex items-center gap-3 hover:scale-105 bg-white border-2 border-[#2563eb] text-[#2563eb] hover:bg-[#2563eb] hover:text-white shadow-lg">
+                    <span>Apply Now 2026</span>
+                    <span
+                        class="w-8 h-8 bg-[#2563eb]/10 group-hover:bg-white/20 rounded-full flex items-center justify-center transition-all">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Stats Counter - Premium Full Width Bar -->
+            <div class="relative rounded-2xl overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-[#003399] via-[#1e40af] to-[#2563eb] animate-gradient">
+                </div>
+                <!-- Decorative patterns inside stats bar -->
+                <div class="absolute inset-0 pointer-events-none">
+                    <div
+                        class="absolute top-0 left-0 w-40 h-40 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2">
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 w-60 h-60 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3">
+                    </div>
+                    <div
+                        class="absolute top-1/2 left-1/4 w-20 h-20 border border-white/10 rounded-full -translate-y-1/2">
+                    </div>
+                    <div
+                        class="absolute top-1/2 right-1/4 w-16 h-16 border border-[#FFB800]/20 rounded-lg rotate-45 -translate-y-1/2">
+                    </div>
+                </div>
+                <div class="relative p-8 md:p-12">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
+                        <div class="text-center group md:border-r border-white/15">
+                            <div
+                                class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-400 border border-white/10">
+                                <i class="fa-solid fa-calendar-check text-[#FFB800] text-2xl"></i>
+                            </div>
+                            <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-1">18+</h3>
+                            <p class="text-blue-200/80 text-sm font-medium">Years of Excellence</p>
+                        </div>
+                        <div class="text-center group md:border-r border-white/15">
+                            <div
+                                class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-400 border border-white/10">
+                                <i class="fa-solid fa-user-graduate text-[#FFB800] text-2xl"></i>
+                            </div>
+                            <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-1">15000+</h3>
+                            <p class="text-blue-200/80 text-sm font-medium">Alumni Network</p>
+                        </div>
+                        <div class="text-center group md:border-r border-white/15">
+                            <div
+                                class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-400 border border-white/10">
+                                <i class="fa-solid fa-building-columns text-[#FFB800] text-2xl"></i>
+                            </div>
+                            <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-1">6</h3>
+                            <p class="text-blue-200/80 text-sm font-medium">Group Institutions</p>
+                        </div>
+                        <div class="text-center group">
+                            <div
+                                class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-400 border border-white/10">
+                                <i class="fa-solid fa-handshake text-[#FFB800] text-2xl"></i>
+                            </div>
+                            <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-1">500+</h3>
+                            <p class="text-blue-200/80 text-sm font-medium">Recruiting Partners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ----------------------------------------WELCOME TO ACCURATE SECTION ENDS---------------------------------------- -->
+
+
+    <!-- ----------------------------------------AFFILIATION & ACCREDITATION SECTION---------------------------------------- -->
+
+    <section class="py-10 md:py-16 bg-[#f8faff] relative overflow-hidden">
+        <!-- Subtle background accents -->
+        <div class="absolute top-0 right-0 w-72 h-72 bg-blue-100/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-60 h-60 bg-yellow-50/40 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="w-full px-4 sm:px-6 lg:px-20 relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">
+                    <span class="text-slate-900">Affiliations & </span>
+                    <span
+                        class="bg-gradient-to-r from-[#2563eb] to-[#1e40af] bg-clip-text text-transparent">Accreditations</span>
+                </h2>
+                <p class="text-slate-500 text-sm md:text-base mt-2 max-w-2xl mx-auto">
+                    Recognized and accredited by India's top academic and regulatory bodies
+                </p>
+                <div class="flex items-center justify-center gap-2 mt-4">
+                    <div class="w-10 h-1 bg-gradient-to-r from-transparent to-[#FFB800] rounded-full"></div>
+                    <div class="w-16 h-1.5 bg-gradient-to-r from-[#2563eb] to-[#1e40af] rounded-full"></div>
+                    <div class="w-10 h-1 bg-gradient-to-l from-transparent to-[#FFB800] rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Accreditation Cards -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5 mb-10">
+                <!-- NAAC -->
+                <div
+                    class="group bg-white rounded-xl p-5 text-center border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2563eb] to-[#1e40af] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                    </div>
+                    <div
+                        class="w-14 h-14 mx-auto mb-3 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-[#2563eb] transition-colors duration-300">
+                        <i
+                            class="fa-solid fa-award text-[#2563eb] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-[#003399] font-extrabold text-sm">NAAC</h4>
+                    <p class="text-slate-400 text-[10px] mt-1 leading-tight">National Assessment & Accreditation Council
+                    </p>
+                </div>
+                <!-- AICTE -->
+                <div
+                    class="group bg-white rounded-xl p-5 text-center border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FFB800] to-[#e6a600] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                    </div>
+                    <div
+                        class="w-14 h-14 mx-auto mb-3 bg-yellow-50 rounded-xl flex items-center justify-center group-hover:bg-[#FFB800] transition-colors duration-300">
+                        <i
+                            class="fa-solid fa-building-columns text-[#FFB800] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-[#003399] font-extrabold text-sm">AICTE</h4>
+                    <p class="text-slate-400 text-[10px] mt-1 leading-tight">All India Council for Technical Education
+                    </p>
+                </div>
+                <!-- BCI -->
+                <div
+                    class="group bg-white rounded-xl p-5 text-center border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2563eb] to-[#1e40af] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                    </div>
+                    <div
+                        class="w-14 h-14 mx-auto mb-3 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-[#2563eb] transition-colors duration-300">
+                        <i
+                            class="fa-solid fa-scale-balanced text-[#2563eb] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-[#003399] font-extrabold text-sm">BCI</h4>
+                    <p class="text-slate-400 text-[10px] mt-1 leading-tight">Bar Council of India</p>
+                </div>
+                <!-- PCI -->
+                <div
+                    class="group bg-white rounded-xl p-5 text-center border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FFB800] to-[#e6a600] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                    </div>
+                    <div
+                        class="w-14 h-14 mx-auto mb-3 bg-yellow-50 rounded-xl flex items-center justify-center group-hover:bg-[#FFB800] transition-colors duration-300">
+                        <i
+                            class="fa-solid fa-pills text-[#FFB800] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-[#003399] font-extrabold text-sm">PCI</h4>
+                    <p class="text-slate-400 text-[10px] mt-1 leading-tight">Pharmacy Council of India</p>
+                </div>
+                <!-- COA -->
+                <div
+                    class="group bg-white rounded-xl p-5 text-center border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2563eb] to-[#1e40af] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                    </div>
+                    <div
+                        class="w-14 h-14 mx-auto mb-3 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-[#2563eb] transition-colors duration-300">
+                        <i
+                            class="fa-solid fa-compass-drafting text-[#2563eb] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-[#003399] font-extrabold text-sm">COA</h4>
+                    <p class="text-slate-400 text-[10px] mt-1 leading-tight">Council of Architecture</p>
+                </div>
+                <!-- ISO -->
+                <div
+                    class="group bg-white rounded-xl p-5 text-center border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FFB800] to-[#e6a600] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                    </div>
+                    <div
+                        class="w-14 h-14 mx-auto mb-3 bg-yellow-50 rounded-xl flex items-center justify-center group-hover:bg-[#FFB800] transition-colors duration-300">
+                        <i
+                            class="fa-solid fa-certificate text-[#FFB800] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-[#003399] font-extrabold text-sm">ISO 9001:2015</h4>
+                    <p class="text-slate-400 text-[10px] mt-1 leading-tight">Quality Management Certified</p>
+                </div>
+            </div>
+
+            <!-- Affiliating Universities Bar -->
+            <div class="bg-gradient-to-r from-[#003399] to-[#2563eb] rounded-xl p-5 md:p-6">
+                <p class="text-white/80 text-xs font-bold uppercase tracking-widest text-center mb-4">Affiliated To</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center border border-white/10 hover:bg-white/20 transition-all duration-300">
+                        <i class="fa-solid fa-university text-[#FFB800] text-lg mb-2"></i>
+                        <h5 class="text-white font-bold text-sm">AKTU, Lucknow</h5>
+                        <p class="text-blue-200/70 text-[10px] mt-0.5">Dr. A.P.J. Abdul Kalam Technical University</p>
+                    </div>
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center border border-white/10 hover:bg-white/20 transition-all duration-300">
+                        <i class="fa-solid fa-university text-[#FFB800] text-lg mb-2"></i>
+                        <h5 class="text-white font-bold text-sm">CCS University, Meerut</h5>
+                        <p class="text-blue-200/70 text-[10px] mt-0.5">Chaudhary Charan Singh University</p>
+                    </div>
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center border border-white/10 hover:bg-white/20 transition-all duration-300">
+                        <i class="fa-solid fa-university text-[#FFB800] text-lg mb-2"></i>
+                        <h5 class="text-white font-bold text-sm">GGSIPU, New Delhi</h5>
+                        <p class="text-blue-200/70 text-[10px] mt-0.5">Guru Gobind Singh Indraprastha University</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ----------------------------------------AFFILIATION & ACCREDITATION SECTION ENDS---------------------------------------- -->
 
     <section class="py-12 md:py-24 bg-[#f8fafc] overflow-hidden">
         <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-20">
@@ -2226,268 +2720,240 @@
         </div>
     </section>
     <!-- ===================== WHAT YOU GRADUATE WITH SECTION ENDS ===================== -->
-    <!-- ===================== ACCURATE APPROACH SECTION ===================== -->
-    <section id="accurate-approach" class="relative overflow-hidden py-24 md:py-32">
-        <!-- Deep Blue Background -->
-        <div class="absolute inset-0 bg-gradient-to-br from-[#001a33] via-[#003c73] to-[#00264d]"></div>
 
-        <!-- Decorative Grid -->
-        <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
-            style="background-image: linear-gradient(rgba(255,193,7,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,193,7,0.5) 1px, transparent 1px); background-size: 60px 60px;">
-        </div>
+    <!-- ===================== EXPLORE OUR STREAMS SECTION ===================== -->
+    <style>
+        .stream-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
 
-        <!-- Decorative Blurs -->
-        <div
-            class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffc107]/8 rounded-full blur-[150px] pointer-events-none">
-        </div>
-        <div
-            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#0057a3]/20 rounded-full blur-[120px] pointer-events-none">
-        </div>
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ffc107]/5 rounded-full blur-[200px] pointer-events-none">
-        </div>
+        .stream-card:hover {
+            transform: translateY(-6px) scale(1.02);
+        }
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+        .stream-card:hover .stream-stripe {
+            height: 100%;
+        }
 
-            <!-- Section Header -->
-            <div class="text-center mb-16 md:mb-20">
-                <div class="inline-flex items-center gap-3 mb-6">
-                    <span class="w-12 h-[2px] bg-gradient-to-r from-transparent to-[#ffc107]"></span>
-                    <span class="text-[#ffc107] font-bold tracking-[0.25em] uppercase text-xs">Structured Career
-                        Development Model</span>
-                    <span class="w-12 h-[2px] bg-gradient-to-l from-transparent to-[#ffc107]"></span>
+        .stream-stripe {
+            transition: height 0.5s ease;
+        }
+
+        .stream-card:hover .stream-arrow {
+            transform: translateX(4px);
+            opacity: 1;
+        }
+
+        .stream-arrow {
+            transition: all 0.3s ease;
+            opacity: 0.5;
+        }
+
+        .bento-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .bento-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <section class="py-8 md:py-12 relative overflow-hidden bg-white" style="min-height: 80vh;">
+        <!-- Asymmetric background split -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-[#f0f4ff] hidden lg:block"
+            style="clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);"></div>
+        <div class="absolute bottom-0 left-0 w-40 h-40 bg-[#FFB800]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="w-full px-4 sm:px-6 lg:px-20 relative z-10">
+
+            <!-- Header — left-aligned on desktop for a non-template feel -->
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 md:mb-14 gap-4">
+                <div class="max-w-2xl">
+                    <p class="text-[#2563eb] font-bold text-sm uppercase tracking-[0.2em] mb-2">What We Offer</p>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-[#003399] leading-tight">
+                        Explore Our<br class="hidden md:block" />
+                        <span class="relative inline-block">
+                            <span class="relative z-10">Academic Streams</span>
+                            <span class="absolute bottom-1 left-0 w-full h-3 bg-[#FFB800]/25 -z-0 rounded-sm"></span>
+                        </span>
+                    </h2>
                 </div>
-                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-                    Accurate Approach: <br class="hidden sm:block" />
-                    <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#ffd54f] to-[#ffc107]">A
-                        System Designed for Results</span>
-                </h2>
-                <div class="max-w-3xl mx-auto">
-                    <p class="text-blue-100/80 text-lg md:text-xl leading-relaxed">
-                        At Accurate, career success is not left to chance.
-                        It is built through a <strong class="text-white font-semibold">structured, outcome-oriented
-                            development framework</strong> that prepares students for both today's opportunities and
-                        tomorrow's challenges.
-                    </p>
-                </div>
-                <p class="text-[#ffc107]/90 font-semibold text-base md:text-lg mt-6 tracking-wide">
-                    Our programs are built on five core pillars:
+                <p class="text-slate-500 text-sm md:text-base max-w-md lg:text-right leading-relaxed">
+                    From engineering to pharmacy, management to law — discover the pathway that shapes your career.
                 </p>
             </div>
 
-            <!-- Five Pillars Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Bento-style Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
 
-                <!-- Pillar 1: Industry-Aligned Curriculum -->
-                <div class="group relative approach-pillar-card">
+                <!-- FEATURED: Engineering — spans 2 cols -->
+                <div
+                    class="stream-card lg:col-span-2 group relative bg-gradient-to-br from-[#003399] to-[#1e40af] rounded-2xl p-7 md:p-8 cursor-pointer overflow-hidden min-h-[200px] flex flex-col justify-end">
                     <div
-                        class="relative bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-3xl p-8 h-full transition-all duration-500 hover:bg-white/[0.1] hover:border-[#ffc107]/30 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(255,193,7,0.12)]">
-                        <!-- Number Badge -->
-                        <div
-                            class="absolute -top-4 -left-2 w-12 h-12 bg-gradient-to-br from-[#003c73] to-[#001a33] rounded-xl flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#003c73]/40 ring-2 ring-[#ffc107]/60 group-hover:scale-110 group-hover:ring-[#ffc107] transition-all duration-300">
-                            01
+                        class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/3 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 w-12 h-12 border border-white/20 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-microchip text-white/60 text-lg"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <span
+                            class="inline-block px-3 py-1 bg-[#FFB800] text-[#003399] text-[10px] font-black uppercase tracking-wider rounded-full mb-3">Most
+                            Popular</span>
+                        <h3 class="text-white text-2xl md:text-3xl font-extrabold mb-2">Engineering & Technology</h3>
+                        <p class="text-blue-200/80 text-sm mb-4 max-w-md">B.Tech in CSE, IT, ME, CE, EE & more — with
+                            specializations in AI, Data Science, and Cloud Computing.</p>
+                        <div class="flex items-center gap-4 text-xs text-blue-200/60">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 4 Years</span>
+                            <span><i class="fa-solid fa-graduation-cap mr-1"></i> B.Tech</span>
+                            <span class="stream-arrow text-[#FFB800] font-bold">Explore →</span>
                         </div>
-                        <!-- Icon -->
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-[#0057a3]/30 to-[#003c73]/30 rounded-2xl flex items-center justify-center mb-6 group-hover:from-[#ffc107]/20 group-hover:to-[#ffc107]/10 transition-all duration-500">
-                            <svg class="w-8 h-8 text-[#ffc107] group-hover:scale-110 transition-transform duration-300"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                                </path>
-                            </svg>
-                        </div>
-                        <!-- Gold Accent Line -->
-                        <div
-                            class="w-12 h-1 bg-gradient-to-r from-[#ffc107] to-transparent rounded-full mb-4 group-hover:w-20 transition-all duration-500">
-                        </div>
-                        <h3
-                            class="text-xl font-bold text-white mb-3 group-hover:text-[#ffc107] transition-colors duration-300">
-                            Industry-Aligned Curriculum</h3>
-                        <p class="text-blue-100/70 text-sm leading-relaxed">Continuously updated to reflect evolving
-                            market demands, corporate expectations, and sector-specific skill requirements.</p>
                     </div>
                 </div>
 
-                <!-- Pillar 2: Project-Based Learning -->
-                <div class="group relative approach-pillar-card">
-                    <div
-                        class="relative bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-3xl p-8 h-full transition-all duration-500 hover:bg-white/[0.1] hover:border-[#ffc107]/30 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(255,193,7,0.12)]">
-                        <div
-                            class="absolute -top-4 -left-2 w-12 h-12 bg-gradient-to-br from-[#003c73] to-[#001a33] rounded-xl flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#003c73]/40 ring-2 ring-[#ffc107]/60 group-hover:scale-110 group-hover:ring-[#ffc107] transition-all duration-300">
-                            02
+                <!-- Management -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-[#FFB800] rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-[#FFB800]/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-chart-line text-[#FFB800] text-lg"></i>
                         </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Management</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">PGDM, MBA & BBA — leadership-focused
+                            programs with industry mentoring.</p>
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-[#0057a3]/30 to-[#003c73]/30 rounded-2xl flex items-center justify-center mb-6 group-hover:from-[#ffc107]/20 group-hover:to-[#ffc107]/10 transition-all duration-500">
-                            <svg class="w-8 h-8 text-[#ffc107] group-hover:scale-110 transition-transform duration-300"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
-                                </path>
-                            </svg>
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>2-3 Years</span>
+                            <span class="stream-arrow text-[#FFB800] font-bold text-xs normal-case">→</span>
                         </div>
-                        <div
-                            class="w-12 h-1 bg-gradient-to-r from-[#ffc107] to-transparent rounded-full mb-4 group-hover:w-20 transition-all duration-500">
-                        </div>
-                        <h3
-                            class="text-xl font-bold text-white mb-3 group-hover:text-[#ffc107] transition-colors duration-300">
-                            Project-Based Learning</h3>
-                        <p class="text-blue-100/70 text-sm leading-relaxed">Practical exposure from early semesters
-                            through live assignments, technical projects, and applied case studies that build execution
-                            capability.</p>
                     </div>
                 </div>
 
-                <!-- Pillar 3: Future Technology Readiness -->
-                <div class="group relative approach-pillar-card">
-                    <div
-                        class="relative bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-3xl p-8 h-full transition-all duration-500 hover:bg-white/[0.1] hover:border-[#ffc107]/30 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(255,193,7,0.12)]">
-                        <div
-                            class="absolute -top-4 -left-2 w-12 h-12 bg-gradient-to-br from-[#003c73] to-[#001a33] rounded-xl flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#003c73]/40 ring-2 ring-[#ffc107]/60 group-hover:scale-110 group-hover:ring-[#ffc107] transition-all duration-300">
-                            03
+                <!-- Computer Applications -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-[#2563eb] rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-laptop-code text-[#2563eb] text-lg"></i>
                         </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Computer Applications</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">BCA & MCA — build full-stack, cloud & app
+                            development expertise.</p>
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-[#0057a3]/30 to-[#003c73]/30 rounded-2xl flex items-center justify-center mb-6 group-hover:from-[#ffc107]/20 group-hover:to-[#ffc107]/10 transition-all duration-500">
-                            <svg class="w-8 h-8 text-[#ffc107] group-hover:scale-110 transition-transform duration-300"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                </path>
-                            </svg>
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>3 Years</span>
+                            <span class="stream-arrow text-[#2563eb] font-bold text-xs normal-case">→</span>
                         </div>
-                        <div
-                            class="w-12 h-1 bg-gradient-to-r from-[#ffc107] to-transparent rounded-full mb-4 group-hover:w-20 transition-all duration-500">
-                        </div>
-                        <h3
-                            class="text-xl font-bold text-white mb-3 group-hover:text-[#ffc107] transition-colors duration-300">
-                            Future Technology Readiness</h3>
-                        <p class="text-blue-100/70 text-sm leading-relaxed">Integrated exposure to emerging and
-                            high-demand domains such as Artificial Intelligence, Data Science, Cloud Computing,
-                            Automation, Digital Transformation, and other evolving technologies — ensuring graduates
-                            remain relevant in a rapidly changing world.</p>
                     </div>
                 </div>
 
-                <!-- Pillar 4: Corporate Interaction & Internships -->
-                <div class="group relative approach-pillar-card">
-                    <div
-                        class="relative bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-3xl p-8 h-full transition-all duration-500 hover:bg-white/[0.1] hover:border-[#ffc107]/30 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(255,193,7,0.12)]">
-                        <div
-                            class="absolute -top-4 -left-2 w-12 h-12 bg-gradient-to-br from-[#003c73] to-[#001a33] rounded-xl flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#003c73]/40 ring-2 ring-[#ffc107]/60 group-hover:scale-110 group-hover:ring-[#ffc107] transition-all duration-300">
-                            04
+                <!-- Pharmacy -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-emerald-500 rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-emerald-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-capsules text-emerald-500 text-lg"></i>
                         </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Pharmacy</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">B.Pharm, D.Pharm & M.Pharm — PCI approved
+                            with advanced labs.</p>
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-[#0057a3]/30 to-[#003c73]/30 rounded-2xl flex items-center justify-center mb-6 group-hover:from-[#ffc107]/20 group-hover:to-[#ffc107]/10 transition-all duration-500">
-                            <svg class="w-8 h-8 text-[#ffc107] group-hover:scale-110 transition-transform duration-300"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                </path>
-                            </svg>
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>2-4 Years</span>
+                            <span class="stream-arrow text-emerald-500 font-bold text-xs normal-case">→</span>
                         </div>
-                        <div
-                            class="w-12 h-1 bg-gradient-to-r from-[#ffc107] to-transparent rounded-full mb-4 group-hover:w-20 transition-all duration-500">
-                        </div>
-                        <h3
-                            class="text-xl font-bold text-white mb-3 group-hover:text-[#ffc107] transition-colors duration-300">
-                            Corporate Interaction & Internships</h3>
-                        <p class="text-blue-100/70 text-sm leading-relaxed">Bridging classroom learning with real-world
-                            application through industry sessions, internships, live projects, and professional
-                            engagement initiatives.</p>
                     </div>
                 </div>
 
-                <!-- Pillar 5: Placement-Focused Training -->
-                <div class="group relative approach-pillar-card md:col-span-2 lg:col-span-1">
+                <!-- FEATURED: Law — spans 2 cols -->
+                <div
+                    class="stream-card lg:col-span-2 group relative bg-gradient-to-br from-[#1e40af] to-[#2563eb] rounded-2xl p-7 md:p-8 cursor-pointer overflow-hidden min-h-[180px] flex flex-col justify-end">
                     <div
-                        class="relative bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-3xl p-8 h-full transition-all duration-500 hover:bg-white/[0.1] hover:border-[#ffc107]/30 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(255,193,7,0.12)]">
-                        <div
-                            class="absolute -top-4 -left-2 w-12 h-12 bg-gradient-to-br from-[#003c73] to-[#001a33] rounded-xl flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#003c73]/40 ring-2 ring-[#ffc107]/60 group-hover:scale-110 group-hover:ring-[#ffc107] transition-all duration-300">
-                            05
+                        class="absolute top-0 right-0 w-24 h-24 border border-white/10 rounded-full -translate-y-1/3 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 w-12 h-12 border border-white/15 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-scale-balanced text-[#FFB800]/60 text-lg"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-white text-2xl font-extrabold mb-2">Law & Legal Studies</h3>
+                        <p class="text-blue-100/70 text-sm mb-3 max-w-md">BCI-approved integrated & regular law programs
+                            preparing future legal professionals & advocates.</p>
+                        <div class="flex items-center gap-4 text-xs text-blue-200/60">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 3-5 Years</span>
+                            <span><i class="fa-solid fa-graduation-cap mr-1"></i> BA LLB / LLB</span>
+                            <span class="stream-arrow text-[#FFB800] font-bold">Explore →</span>
                         </div>
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-[#0057a3]/30 to-[#003c73]/30 rounded-2xl flex items-center justify-center mb-6 group-hover:from-[#ffc107]/20 group-hover:to-[#ffc107]/10 transition-all duration-500">
-                            <svg class="w-8 h-8 text-[#ffc107] group-hover:scale-110 transition-transform duration-300"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
-                                </path>
-                            </svg>
+                    </div>
+                </div>
+
+                <!-- Commerce -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-violet-500 rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-violet-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-coins text-violet-500 text-lg"></i>
                         </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Commerce</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">B.Com (Hons) — accounting, finance &
+                            taxation with CA/CS foundation.</p>
                         <div
-                            class="w-12 h-1 bg-gradient-to-r from-[#ffc107] to-transparent rounded-full mb-4 group-hover:w-20 transition-all duration-500">
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>3 Years</span>
+                            <span class="stream-arrow text-violet-500 font-bold text-xs normal-case">→</span>
                         </div>
-                        <h3
-                            class="text-xl font-bold text-white mb-3 group-hover:text-[#ffc107] transition-colors duration-300">
-                            Placement-Focused Training</h3>
-                        <p class="text-blue-100/70 text-sm leading-relaxed">Structured aptitude development, technical
-                            skill enhancement, mock interviews, resume building, communication training, and personality
-                            development to ensure interview confidence and career readiness.</p>
+                    </div>
+                </div>
+
+                <!-- Polytechnic -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-orange-500 rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-gear text-orange-500 text-lg"></i>
+                        </div>
+                        <h3 class="text-slate-900 font-extrabold text-lg mb-1">Polytechnic</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">Diploma in Engineering — hands-on
+                            technical training after 10th.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>3 Years</span>
+                            <span class="stream-arrow text-orange-500 font-bold text-xs normal-case">→</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Closing Quote -->
-            <div class="text-center max-w-3xl mx-auto">
-                <div class="relative inline-block">
-                    <div
-                        class="absolute -top-6 -left-6 text-[#ffc107]/20 text-7xl font-serif leading-none pointer-events-none">
-                        "</div>
-                    <p class="text-white/90 text-lg md:text-xl font-medium italic leading-relaxed pl-4">
-                        Because sustainable career success is built through structured preparation — <span
-                            class="text-[#ffc107] font-bold not-italic">not probability.</span>
-                    </p>
-                    <div
-                        class="absolute -bottom-4 -right-4 text-[#ffc107]/20 text-7xl font-serif leading-none pointer-events-none rotate-180">
-                        "</div>
+            <!-- Bottom CTA strip -->
+            <div
+                class="mt-8 flex flex-col sm:flex-row items-center justify-between bg-slate-50 rounded-xl p-5 md:p-6 gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-phone text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <p class="text-[#003399] font-bold text-sm">Not sure which stream is right for you?</p>
+                        <p class="text-slate-400 text-xs">Talk to our counsellors — we'll help you find the perfect fit.
+                        </p>
+                    </div>
                 </div>
-                <div
-                    class="mt-8 w-24 h-1 bg-gradient-to-r from-transparent via-[#ffc107] to-transparent mx-auto rounded-full">
-                </div>
+                <a href="https://admissions.accurate.in/" target="_blank"
+                    class="px-6 py-3 bg-[#2563eb] hover:bg-[#1e40af] text-white rounded-lg font-bold text-sm transition-all duration-300 flex-shrink-0 hover:scale-105">
+                    Get Counselling <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
             </div>
         </div>
     </section>
-
-    <style>
-        .approach-pillar-card {
-            animation: approach-fadeUp 0.6s ease-out both;
-        }
-
-        .approach-pillar-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .approach-pillar-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .approach-pillar-card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .approach-pillar-card:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .approach-pillar-card:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-
-        @keyframes approach-fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
-    <!-- ===================== ACCURATE APPROACH SECTION ENDS ===================== -->
-
+    <!-- ===================== EXPLORE OUR STREAMS SECTION ENDS ===================== -->
 
     <!-- About Section Starts Here -->
     <section id="about"
@@ -3699,11 +4165,11 @@
                     </div>
                 </div>
 
-                 
-                   
-                </div>
-                </div>
+
+
             </div>
+        </div>
+        </div>
         </div>
     </section>
 
@@ -4745,20 +5211,20 @@
                 </div> -->
 
                 <div class="flex gap-6 animate-placement-marquee" style="width: max-content;">
-                   
+
                     <!-- Student Card -->
                     <div class="w-[300px] shrink-0 group">
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/ishika-agarwal.webp"
-                                    alt="Ishika Agarwal"
+                                <img src="./images/placement/ishika-agarwal.webp" alt="Ishika Agarwal"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/icici-bank.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/icici-bank.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -4778,14 +5244,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/komal-maurya.webp"
-                                    alt="Komal Maurya"
+                                <img src="./images/placement/komal-maurya.webp" alt="Komal Maurya"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/genpact.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/genpact.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -4805,14 +5271,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/mohammad-navaid.webp"
-                                    alt="Mohammad Navaid"
+                                <img src="./images/placement/mohammad-navaid.webp" alt="Mohammad Navaid"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/hdfc-placement.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/hdfc-placement.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -4832,14 +5298,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/monika-baghel.webp"
-                                    alt="Monika Baghel"
+                                <img src="./images/placement/monika-baghel.webp" alt="Monika Baghel"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/first-point-creations.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/first-point-creations.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -4859,14 +5325,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/puja-kumari.webp"
-                                    alt="Puja Kumari"
+                                <img src="./images/placement/puja-kumari.webp" alt="Puja Kumari"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/genpact.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/genpact.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -4886,14 +5352,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/sanjeev-kumar-singh.webp"
-                                    alt="Sanjeev Kumar Singh"
+                                <img src="./images/placement/sanjeev-kumar-singh.webp" alt="Sanjeev Kumar Singh"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/oppo.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/oppo.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -4913,14 +5379,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/shobhika-rajput.webp"
-                                    alt="Shobhika Rajput"
+                                <img src="./images/placement/shobhika-rajput.webp" alt="Shobhika Rajput"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/suwasthi.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/suwasthi.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -4940,14 +5406,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/sippal-rani.webp"
-                                    alt="Sippal Rani"
+                                <img src="./images/placement/sippal-rani.webp" alt="Sippal Rani"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/capital-boon.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/capital-boon.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -4967,14 +5433,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/tausifraja.webp"
-                                    alt="Tausifraja"
+                                <img src="./images/placement/tausifraja.webp" alt="Tausifraja"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/hdfc-placement.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/hdfc-placement.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -4994,14 +5460,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/vaishali-vineet.webp"
-                                    alt="Vaishali Vineet"
+                                <img src="./images/placement/vaishali-vineet.webp" alt="Vaishali Vineet"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/tide.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/tide.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5021,14 +5487,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/yasha.webp"
-                                    alt="Yasha"
+                                <img src="./images/placement/yasha.webp" alt="Yasha"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/capital-boon.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/capital-boon.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5043,7 +5509,7 @@
                             </div>
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
 
             <!-- Auto-Scrolling Marquee Row 2 (Reverse) -->
@@ -5062,14 +5528,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/adarsh-singh.webp"
-                                    alt="Adarsh Singh"
+                                <img src="./images/placement/adarsh-singh.webp" alt="Adarsh Singh"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/oppo.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/oppo.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5089,14 +5555,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/aman-kumar.webp"
-                                    alt="Aman Kumar"
+                                <img src="./images/placement/aman-kumar.webp" alt="Aman Kumar"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/first-point-creations.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/first-point-creations.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5116,19 +5582,19 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/anjali-yadav.webp"
-                                    alt="Anjali Yadav"
+                                <img src="./images/placement/anjali-yadav.webp" alt="Anjali Yadav"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/capital-boon.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/capital-boon.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
                                 <h4 class="font-bold text-[#003c73] text-lg leading-tight">Anjali Yadav</h4>
-                                 <!-- <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p> -->
+                                <!-- <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p> -->
                                 <div class="flex items-center gap-2 mt-3">
                                     <!-- <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
                                         LPA</div>
@@ -5143,14 +5609,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/ashfee-khan.webp"
-                                    alt="Ashfee Khan"
+                                <img src="./images/placement/ashfee-khan.webp" alt="Ashfee Khan"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/genpact.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/genpact.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5170,14 +5636,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/astha-singh.webp"
-                                    alt="Astha Singh"
+                                <img src="./images/placement/astha-singh.webp" alt="Astha Singh"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/Bajaj.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/Bajaj.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5197,14 +5663,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/avneesh-kumar-singh.webp"
-                                    alt="Avneesh Kumar Singh"
+                                <img src="./images/placement/avneesh-kumar-singh.webp" alt="Avneesh Kumar Singh"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/d-mart.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/d-mart.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5224,14 +5690,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/ayush-kumar-pandey.webp"
-                                    alt="Ayush Kumar Pandey"
+                                <img src="./images/placement/ayush-kumar-pandey.webp" alt="Ayush Kumar Pandey"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/wipro.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/wipro.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5251,14 +5717,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/chandan-kumar.webp"
-                                    alt="Chandan Kumar"
+                                <img src="./images/placement/chandan-kumar.webp" alt="Chandan Kumar"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/smc.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/smc.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5278,14 +5744,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/deepak-pratap.webp"
-                                    alt="Deepak Pratap"
+                                <img src="./images/placement/deepak-pratap.webp" alt="Deepak Pratap"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/first-point-creations.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/first-point-creations.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5305,14 +5771,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/deepika.webp"
-                                    alt="Deepika"
+                                <img src="./images/placement/deepika.webp" alt="Deepika"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/capital-boon.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/capital-boon.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5332,14 +5798,14 @@
                         <div
                             class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
                             <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/gaurav.webp"
-                                    alt="Gaurav"
+                                <img src="./images/placement/gaurav.webp" alt="Gaurav"
                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
                                 </div>
                                 <div class="absolute bottom-3 left-4">
-                                    <img src="./images/placement-logo/credit-q.webp" alt="Company Logo" class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
+                                    <img src="./images/placement-logo/credit-q.webp" alt="Company Logo"
+                                        class="h-8 w-auto object-contain bg-white/90 px-2 py-1 rounded shadow-sm" />
                                 </div>
                             </div>
                             <div class="p-5">
@@ -5913,7 +6379,8 @@
     <footer class="bg-[#0052cc] text-white">
         <div class="max-w-6xl mx-auto px-4 py-10">
             <!-- Footer Logo -->
-            <div class="mb-8 pb-6 border-b border-white/20 bg-white max-w-lg mx-auto rounded-lg flex justify-center text-center items-center">
+            <div
+                class="mb-8 pb-6 border-b border-white/20 bg-white max-w-lg mx-auto rounded-lg flex justify-center text-center items-center">
                 <img src="./images/logo-main2.png" alt="Accurate Group of Institutions Logo"
                     class="h-24 md:h-28 lg:h-32 w-auto pl-5 pt-5" />
             </div>
