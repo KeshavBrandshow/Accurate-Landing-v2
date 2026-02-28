@@ -1,616 +1,503 @@
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/adarsh-singh.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Cinzel:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accurate-blue': '#1B46BC',
+                        'accurate-yellow': '#FACC15',
+                        'accurate-dark-blue': '#102d7a',
+                        'card-gray': '#f4f4f4',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'cinzel': ['Cinzel', 'serif'],
+                        'bookman': ['Libre Baskerville', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        
+        /* Fashion Slider Styles */
+        :root {
+            --fashion-slider-font-family: 'Poppins', sans-serif;
+            --fashion-slider-button-side-offset: 32px;
+            --fashion-slider-button-mobile-side-offset: 24px;
+            --fashion-slider-button-mobile-bottom-offset: 16px;
+            --fashion-slider-title-font-size: 80px;
+            --fashion-slider-title-line-height: 1.2;
+        }
+
+        .fashion-slider {
+            width: 100%;
+            height: 100%;
+            font-family: var(--fashion-slider-font-family)
+        }
+
+        .fashion-slider-no-transition {
+            transition-duration: 0ms !important;
+            transition-delay: 0ms !important;
+            transition-property: none !important
+        }
+
+        .fashion-slider-no-transition *:not(.swiper-wrapper) {
+            transition-duration: 0ms !important;
+            transition-delay: 0ms !important;
+            transition-property: none !important
+        }
+
+        .fashion-slider-no-transition .swiper-wrapper {
+            transition-delay: 0ms !important
+        }
+
+        .fashion-slider .swiper {
+            width: 100%;
+            height: 100%;
+            transition: 1s background-color 1.3s
+        }
+
+        .fashion-slider .swiper-wrapper {
+            transition-delay: 1s;
+            transition-timing-function: cubic-bezier(.5, 0, 0, 1)
+        }
+
+        .fashion-slider .swiper-slide {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .fashion-slider-title {
+            transition-delay: 1s;
+            z-index: 10
+        }
+
+        .fashion-slider-title-text {
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #fff0;
+            -webkit-text-stroke: 2px #fff
+        }
+
+        .fashion-slider-scale {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform: scale(.6);
+            transition-duration: 1s;
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(.5, 0, 0, 1);
+            opacity: .9;
+            overflow: hidden
+        }
+
+        .fashion-slider-scale img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.2) translate(50%);
+            transition-timing-function: cubic-bezier(.5, 0, 0, 1);
+            transition-property: transform
+        }
+
+        .swiper-vertical .fashion-slider-scale img {
+            transform: scale(1.2) translateY(50%)
+        }
+
+        .fashion-slider-button {
+            transition: .5s;
+            outline: none;
+            position: absolute;
+            width: 140px;
+            z-index: 10;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer
+        }
+
+        .fashion-slider-button svg {
+            display: block;
+            transition: .5s
+        }
+
+        .fashion-slider-button .fashion-slider-svg-circle-wrap {
+            transition: .5s;
+            transform-origin: -20px 40px;
+            opacity: 1
+        }
+
+        .fashion-slider-button circle {
+            transition: .5s;
+            stroke-width: 2px;
+            stroke: #fff;
+            fill: none;
+            stroke-dasharray: 1;
+            stroke-dashoffset: 1;
+            opacity: 1;
+            transform-origin: 0px 0px 0px
+        }
+
+        .fashion-slider-button .fashion-slider-svg-arrow {
+            transition: .5s;
+            fill: #fff;
+            transform: rotateY(180deg) translate(-55px, 36.1px) scale(1.75)
+        }
+
+        .fashion-slider-button-prev {
+            left: var(--fashion-slider-button-side-offset)
+        }
+
+        .fashion-slider-button-next {
+            right: var(--fashion-slider-button-side-offset)
+        }
+
+        @media (max-width: 640px) {
+            .fashion-slider-button {
+                top: auto;
+                bottom: var(--fashion-slider-button-mobile-bottom-offset);
+                transform: none
+            }
+
+            .fashion-slider-button-prev {
+                left: var(--fashion-slider-button-mobile-side-offset)
+            }
+
+            .fashion-slider-button-next {
+                right: var(--fashion-slider-button-mobile-side-offset)
+            }
+        }
+
+        .fashion-slider-button-disabled {
+            opacity: .2;
+            cursor: default
+        }
+
+        .fashion-slider-button .fashion-slider-svg-wrap {
+            transform: translateY(353px)
+        }
+
+        .fashion-slider-button-next .fashion-slider-svg-wrap {
+            transform: translateY(353px) rotateY(180deg);
+            transform-origin: 80px 0px 0px
+        }
+
+        .fashion-slider-button .fashion-slider-svg-line {
+            transition: .5s;
+            stroke: #fff;
+            stroke-width: 2;
+            transform: translate(50px, 42px)
+        }
+
+        .fashion-slider-button-prev:not(.fashion-slider-button-disabled):hover svg {
+            transform: translate(-16px)
+        }
+
+        .fashion-slider-button-next:not(.fashion-slider-button-disabled):hover svg {
+            transform: translate(16px)
+        }
+
+        .fashion-slider-button:not(.fashion-slider-button-disabled):hover .fashion-slider-svg-circle-wrap {
+            transform: scale(1.1)
+        }
+
+        .fashion-slider-button:not(.fashion-slider-button-disabled):hover circle {
+            stroke-dasharray: 4px;
+            stroke-dashoffset: 4px;
+            opacity: 1
+        }
+
+        .fashion-slider-button:not(.fashion-slider-button-disabled):hover .fashion-slider-svg-arrow {
+            transform: rotateY(180deg) translate(-40px, 36.1px) scale(1.75)
+        }
+
+        .fashion-slider-button:not(.fashion-slider-button-disabled):hover .fashion-slider-svg-line {
+            transform: translate(35px, 42px) scaleX(.5)
+        }
+
+        .fashion-slider {
+            --fashion-slider-title-font-size: 88px
+        }
+
+        @media (max-width: 480px) {
+            .fashion-slider {
+                --fashion-slider-title-font-size: 60px
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+
+<section
+        class="w-full relative py-12 md:py-16 bg-[#F0F4FF] overflow-hidden shadow-inner bg-gradient-to-b from-[#F0F4FF] to-white"
+        id="specializations">
+        <div class="max-w-7xl mx-auto px-4 mb-8 relative z-10 flex flex-col md:flex-row justify-between items-end">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-accurate-blue uppercase mb-2 drop-shadow-sm">
+                    B.Tech Specializations</h2>
+                <p class="text-sm text-gray-600 font-medium">Explore our industry-oriented B.Tech programmes tailored
+                    for modern tech excellence.</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10 h-[500px] md:h-[600px]">
+            <!-- Fashion slider container -->
+            <div
+                class="fashion-slider rounded-2xl overflow-hidden shadow-2xl relative w-full h-full border-[6px] border-white">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide flex flex-col md:flex-row items-center justify-between px-10 md:px-24 gap-8"
+                            data-slide-bg-color="#1B46BC">
+                            <div class="w-full md:w-1/2 flex flex-col justify-center items-start text-left z-20"
+                                data-swiper-parallax="-130%">
+                                <div class="fashion-slider-title !relative">
+                                    <div class="fashion-slider-title-text text-[35px] md:text-[50px] lg:text-[70px] leading-[1.1] font-poppins text-left"
+                                        style="white-space: normal;">Computer Science<br>& Engineering</div>
                                 </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
+                                <p
+                                    class="text-white text-sm md:text-base mt-2 font-medium max-w-lg drop-shadow-md mb-2">
+                                    Master the fundamentals of computing, software development, and modern technologies
+                                    to build the future of tech.
+                                </p>
+                                <button
+                                    class="mt-4 px-8 py-3 bg-white text-[#1B46BC] font-bold rounded-full shadow-lg hover:bg-gray-100 transition-transform hover:scale-105">Explore
+                                    Program</button>
+                            </div>
+                            <div
+                                class="w-full md:w-1/2 h-[50%] md:h-[80%] relative z-10 flex justify-center items-center">
+                                <div class="fashion-slider-scale rounded-2xl shadow-2xl overflow-hidden"
+                                    style="position: relative; width: 100%; height: 100%;">
+                                    <img src="https://www.accurate.in/engg/img/classrooms/classroom4.webp" alt="CSE">
                                 </div>
                             </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide flex flex-col md:flex-row items-center justify-between px-10 md:px-24 gap-8"
+                            data-slide-bg-color="#FACC15">
+                            <div class="w-full md:w-1/2 flex flex-col justify-center items-start text-left z-20"
+                                data-swiper-parallax="-130%">
+                                <div class="fashion-slider-title !relative">
+                                    <div class="fashion-slider-title-text text-[35px] md:text-[50px] lg:text-[70px] leading-[1.1] font-poppins text-left"
+                                        style="white-space: normal;">CSE<br>(AI & ML)</div>
+                                </div>
+                                <p
+                                    class="text-white text-sm md:text-base mt-2 font-medium max-w-lg drop-shadow-md text-shadow mb-2">
+                                    Dive into the world of Artificial Intelligence and Machine Learning to create smart,
+                                    data-driven solutions.
+                                </p>
+                                <button
+                                    class="mt-4 px-8 py-3 bg-white text-[#b5920b] font-bold rounded-full shadow-lg hover:bg-gray-100 transition-transform hover:scale-105">Explore
+                                    Program</button>
+                            </div>
+                            <div
+                                class="w-full md:w-1/2 h-[50%] md:h-[80%] relative z-10 flex justify-center items-center">
+                                <div class="fashion-slider-scale rounded-2xl shadow-2xl overflow-hidden"
+                                    style="position: relative; width: 100%; height: 100%;">
+                                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000"
+                                        alt="AI ML">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide flex flex-col md:flex-row items-center justify-between px-10 md:px-24 gap-8"
+                            data-slide-bg-color="#102d7a">
+                            <div class="w-full md:w-1/2 flex flex-col justify-center items-start text-left z-20"
+                                data-swiper-parallax="-130%">
+                                <div class="fashion-slider-title !relative">
+                                    <div class="fashion-slider-title-text text-[35px] md:text-[50px] lg:text-[70px] leading-[1.1] font-poppins text-left"
+                                        style="white-space: normal;">Mechanical<br>Engineering</div>
+                                </div>
+                                <p
+                                    class="text-white text-sm md:text-base mt-2 font-medium max-w-lg drop-shadow-md mb-2">
+                                    Design, analyze, and manufacture cutting-edge mechanical systems shaping the future
+                                    of industries.
+                                </p>
+                                <button
+                                    class="mt-4 px-8 py-3 bg-white text-[#102d7a] font-bold rounded-full shadow-lg hover:bg-gray-100 transition-transform hover:scale-105">Explore
+                                    Program</button>
+                            </div>
+                            <div
+                                class="w-full md:w-1/2 h-[50%] md:h-[80%] relative z-10 flex justify-center items-center">
+                                <div class="fashion-slider-scale rounded-2xl shadow-2xl overflow-hidden"
+                                    style="position: relative; width: 100%; height: 100%;">
+                                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000"
+                                        alt="Mechanical">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide flex flex-col md:flex-row items-center justify-between px-10 md:px-24 gap-8"
+                            data-slide-bg-color="#4B5563">
+                            <div class="w-full md:w-1/2 flex flex-col justify-center items-start text-left z-20"
+                                data-swiper-parallax="-130%">
+                                <div class="fashion-slider-title !relative">
+                                    <div class="fashion-slider-title-text text-[35px] md:text-[50px] lg:text-[70px] leading-[1.1] font-poppins text-left"
+                                        style="white-space: normal;">Electronics &<br>Communication</div>
+                                </div>
+                                <p
+                                    class="text-white text-sm md:text-base mt-2 font-medium max-w-lg drop-shadow-md mb-2">
+                                    Pioneer advancements in core electronics, embedded systems, and modern communication
+                                    networks.
+                                </p>
+                                <button
+                                    class="mt-4 px-8 py-3 bg-white text-[#4B5563] font-bold rounded-full shadow-lg hover:bg-gray-100 transition-transform hover:scale-105">Explore
+                                    Program</button>
+                            </div>
+                            <div
+                                class="w-full md:w-1/2 h-[50%] md:h-[80%] relative z-10 flex justify-center items-center">
+                                <div class="fashion-slider-scale rounded-2xl shadow-2xl overflow-hidden"
+                                    style="position: relative; width: 100%; height: 100%;">
+                                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abf0ceea?auto=format&fit=crop&q=80&w=2000"
+                                        alt="ECE">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/aman-kumar.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- left/previous navigation button -->
+                    <div class="fashion-slider-button-prev fashion-slider-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                            <g class="fashion-slider-svg-wrap">
+                                <g class="fashion-slider-svg-circle-wrap">
+                                    <circle cx="42" cy="42" r="40"></circle>
+                                </g>
+                                <path class="fashion-slider-svg-arrow"
+                                    d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z"></path>
+                                <path class="fashion-slider-svg-line" d="M80,0H0"></path>
+                            </g>
+                        </svg>
                     </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/anjali-yadav.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- right/next navigation button -->
+                    <div class="fashion-slider-button-next fashion-slider-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                            <g class="fashion-slider-svg-wrap">
+                                <g class="fashion-slider-svg-circle-wrap">
+                                    <circle cx="42" cy="42" r="40"></circle>
+                                </g>
+                                <path class="fashion-slider-svg-arrow"
+                                    d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z"></path>
+                                <path class="fashion-slider-svg-line" d="M80,0H0"></path>
+                            </g>
+                        </svg>
                     </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/ashfee-khan.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/astha-singh.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/avneesh-kumar-singh.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/ayush-kumar-pandey.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/chandan-kumar.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/deepak-pratap.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/deepika.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/gaurav.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/ishika-agarwal.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/komal-maurya.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/mohammad-navaid.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/monika-baghel.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/puja-kumari.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/sanjeev-kumar-singh.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/shobhika-rajput.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/sippal-rani.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/tausifraja.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/vaishali-vineet.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Student Card -->
-                    <div class="w-[300px] shrink-0 group">
-                        <div
-                            class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_20px_50px_rgba(0,87,163,0.15)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="relative h-52 overflow-hidden">
-                                <img src="./images/placement/yasha.webp"
-                                    alt="Rahul Sharma"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-[#003c73]/80 via-transparent to-transparent">
-                                </div>
-                                <div class="absolute bottom-3 left-4 right-4">
-                                    <span
-                                        class="inline-block px-3 py-1 bg-[#ffc107] text-[#003c73] text-[10px] font-black uppercase tracking-wider rounded-full">Wipro</span>
-                                </div>
-                            </div>
-                            <div class="p-5">
-                                <h4 class="font-bold text-[#003c73] text-lg leading-tight">Rahul Sharma</h4>
-                                <p class="text-[#50627b] text-sm mt-1">B.Tech CSE — Batch 2024</p>
-                                <div class="flex items-center gap-2 mt-3">
-                                    <div class="px-3 py-1 bg-blue-50 rounded-full text-[#0057a3] text-xs font-bold">₹6.5
-                                        LPA</div>
-                                    <div class="px-3 py-1 bg-[#fff8e1] rounded-full text-[#8a6a02] text-xs font-bold">
-                                        Software Eng.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        function FashionSlider(s) {
+            let t = !1,
+                i = !1,
+                r;
+            const n = u => {
+                u.classList.add("fashion-slider-no-transition"), i = !0, cancelAnimationFrame(r), r = requestAnimationFrame(() => {
+                    u.classList.remove("fashion-slider-no-transition"), i = !1, t = !1
+                })
+            };
+            let l;
+            const o = () => {
+                t || l.slideNext()
+            },
+                a = () => {
+                    t || l.slidePrev()
+                },
+                d = u => {
+                    u.el.querySelector(".fashion-slider-button-next").addEventListener("click", o), u.el.querySelector(".fashion-slider-button-prev").addEventListener("click", a)
+                },
+                p = u => {
+                    u.el.querySelector(".fashion-slider-button-next").removeEventListener("click", o), u.el.querySelector(".fashion-slider-button-prev").removeEventListener("click", a)
+                };
+            let c;
+            l = new Swiper(s, {
+                direction: "horizontal",
+                speed: 1300,
+                allowTouchMove: !1,
+                parallax: !0,
+                on: {
+                    loopFix() {
+                        c = !1
+                    },
+                    transitionStart(u) {
+                        if (u.params.loop) {
+                            if (c) return;
+                            c || (c = !0)
+                        }
+                        const { slides: m, previousIndex: h, activeIndex: b, el: S } = u;
+                        i || (t = !0);
+                        const g = m[b],
+                            v = m[h],
+                            E = v.querySelector(".fashion-slider-scale"),
+                            w = v.querySelector("img"),
+                            I = g.querySelector("img"),
+                            M = b - h,
+                            y = g.getAttribute("data-slide-bg-color");
+                        S.style["background-color"] = y, E.style.transform = "scale(0.6)", w.style.transitionDuration = "1000ms", w.style.transform = "scale(1.2)";
+                        const L = v.querySelector(".fashion-slider-title-text");
+                        L.style.transition = "1000ms", L.style.color = "rgba(255,255,255,0)";
+                        const x = T => {
+                            T.target === w && (w.removeEventListener("transitionend", x), I.style.transitionDuration = "1300ms", I.style.transform = "translate3d(0, 0, 0) scale(1.2)", w.style.transitionDuration = "1300ms", w.style.transform = `translate3d(${60 * M * (u.isHorizontal() ? 1 : 0)}%, ${60 * M * (u.isHorizontal() ? 0 : 1)}%, 0)  scale(1.2)`)
+                        };
+                        w.addEventListener("transitionend", x)
+                    },
+                    transitionEnd(u) {
+                        const { slides: f, activeIndex: m, el: h } = u,
+                            b = f[m],
+                            S = b.querySelector("img"),
+                            g = u.params.loop;
+                        b.querySelector(".fashion-slider-scale").style.transform = "scale(1)", S.style.transitionDuration = "1000ms", S.style.transform = "scale(1)";
+                        const v = b.querySelector(".fashion-slider-title-text");
+                        v.style.transition = "1000ms", v.style.color = "rgba(255,255,255,1)";
+                        const E = w => {
+                            w.target === S && (S.removeEventListener("transitionend", E), t = !1)
+                        };
+                        S.addEventListener("transitionend", E), g || (m === 0 ? h.querySelector(".fashion-slider-button-prev").classList.add("fashion-slider-button-disabled") : h.querySelector(".fashion-slider-button-prev").classList.remove("fashion-slider-button-disabled"), m === f.length - 1 ? h.querySelector(".fashion-slider-button-next").classList.add("fashion-slider-button-disabled") : h.querySelector(".fashion-slider-button-next").classList.remove("fashion-slider-button-disabled"))
+                    },
+                    beforeInit(u) {
+                        const { el: f } = u;
+                        n(f)
+                    },
+                    init(u) {
+                        const { slides: f, activeIndex: m, el: h } = u, b = f[m].getAttribute("data-slide-bg-color");
+                        h.style["background-color"] = b, u.emit("transitionEnd"), d(u)
+                    },
+                    resize(u) {
+                        n(u.el)
+                    },
+                    destroy(u) {
+                        p(u)
+                    }
+                }
+            })
+            return l;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const qt = document.querySelector(".fashion-slider .swiper");
+            if (qt) {
+                FashionSlider(qt);
+            }
+        });
+    </script>
+</body>
+</html>
