@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Streams - Accurate Institute</title>
+    <meta name="description"
+        content="Explore Accurate Institute's academic streams — Engineering, Management, Computer Applications, Pharmacy, Law, Commerce & Polytechnic." />
+
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Google Fonts -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+    </style>
+
+    <!-- ===================== ALL CSS STYLES ===================== -->
+    <style>
+        /* -------- Base Styles -------- */
+        body {
+            font-family: "Inter", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* -------- Section 1: OUR ACADEMIC STREAMS (Card Grid) -------- */
+        .stream-pill {
+            transition: all 0.35s ease;
+        }
+
+        .stream-pill:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
+        }
+
+        /* -------- Section 2: EXPLORE OUR STREAMS (Bento Grid) -------- */
+        .stream-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .stream-card:hover {
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        .stream-card:hover .stream-stripe {
+            height: 100%;
+        }
+
+        .stream-stripe {
+            transition: height 0.5s ease;
+        }
+
+        .stream-card:hover .stream-arrow {
+            transform: translateX(4px);
+            opacity: 1;
+        }
+
+        .stream-arrow {
+            transition: all 0.3s ease;
+            opacity: 0.5;
+        }
+
+        .bento-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .bento-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* -------- Section 3: FASHION SLIDER (Stream Slider) -------- */
+        :root {
+            --fashion-slider-font-family: 'Poppins', sans-serif;
+            --fashion-slider-button-side-offset: 32px;
+            --fashion-slider-button-mobile-side-offset: 24px;
+            --fashion-slider-button-mobile-bottom-offset: 16px;
+            --fashion-slider-title-font-size: 80px;
+            --fashion-slider-title-line-height: 1.2;
+        }
+
+        .fashion-slider {
+            width: 100%;
+            height: 100%;
+            font-family: var(--fashion-slider-font-family)
+        }
+
+        .fashion-slider-no-transition {
+            transition-duration: 0ms !important;
+            transition-delay: 0ms !important;
+            transition-property: none !important
+        }
+
+        .fashion-slider-no-transition *:not(.swiper-wrapper) {
+            transition-duration: 0ms !important;
+            transition-delay: 0ms !important;
+            transition-property: none !important
+        }
+
+        .fashion-slider-no-transition .swiper-wrapper {
+            transition-delay: 0ms !important
+        }
+
+        .fashion-slider .swiper {
+            width: 100%;
+            height: 100%;
+            transition: 1s background-color 1.3s
+        }
+
+        .fashion-slider .swiper-wrapper {
+            transition-delay: 1s;
+            transition-timing-function: cubic-bezier(.5, 0, 0, 1)
+        }
+
+        .fashion-slider .swiper-slide {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .fashion-slider-title {
+            transition-delay: 1s;
+            z-index: 10
+        }
+
+        .fashion-slider-title-text {
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #fff0;
+            -webkit-text-stroke: 2px #fff
+        }
+
+        .fashion-slider-scale {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform: scale(.6);
+            transition-duration: 1s;
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(.5, 0, 0, 1);
+            opacity: .9;
+            overflow: hidden
+        }
+
+        .fashion-slider-scale img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.2) translate(50%);
+            transition-timing-function: cubic-bezier(.5, 0, 0, 1);
+            transition-property: transform
+        }
+
+        .swiper-vertical .fashion-slider-scale img {
+            transform: scale(1.2) translateY(50%)
+        }
+
+        .fashion-slider-button {
+            transition: .5s;
+            outline: none;
+            position: absolute;
+            width: 140px;
+            z-index: 10;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer
+        }
+
+        .fashion-slider-button svg {
+            display: block;
+            transition: .5s
+        }
+
+        .fashion-slider-button .fashion-slider-svg-circle-wrap {
+            transition: .5s;
+            transform-origin: -20px 40px;
+            opacity: 1
+        }
+
+        .fashion-slider-button circle {
+            transition: .5s;
+            stroke-width: 2px;
+            stroke: #fff;
+            fill: none;
+            stroke-dasharray: 1;
+            stroke-dashoffset: 1;
+            opacity: 1;
+            transform-origin: 0px 0px 0px
+        }
+
+        .fashion-slider-button .fashion-slider-svg-arrow {
+            transition: .5s;
+            fill: #fff;
+            transform: rotateY(180deg) translate(-55px, 36.1px) scale(1.75)
+        }
+
+        .fashion-slider-button-prev {
+            left: var(--fashion-slider-button-side-offset)
+        }
+
+        .fashion-slider-button-next {
+            right: var(--fashion-slider-button-side-offset)
+        }
+
+        @media (max-width: 640px) {
+            .fashion-slider-button {
+                top: auto;
+                bottom: var(--fashion-slider-button-mobile-bottom-offset);
+                transform: none
+            }
+
+            .fashion-slider-button-prev {
+                left: var(--fashion-slider-button-mobile-side-offset)
+            }
+
+            .fashion-slider-button-next {
+                right: var(--fashion-slider-button-mobile-side-offset)
+            }
+        }
+
+        .fashion-slider-button-disabled {
+            opacity: .2;
+            cursor: default
+        }
+
+        .fashion-slider-button .fashion-slider-svg-wrap {
+            transform: translateY(353px)
+        }
+
+        .fashion-slider-button-next .fashion-slider-svg-wrap {
+            transform: translateY(353px) rotateY(180deg);
+            transform-origin: 80px 0px 0px
+        }
+
+        .fashion-slider-button .fashion-slider-svg-line {
+            transition: .5s;
+            stroke: #fff;
+            stroke-width: 2;
+            transform: translate(50px, 42px)
+        }
+
+        .fashion-slider-button-prev:not(.fashion-slider-button-disabled):hover svg {
+            transform: translate(-16px)
+        }
+
+        .fashion-slider-button-next:not(.fashion-slider-button-disabled):hover svg {
+            transform: translate(16px)
+        }
+
+        .fashion-slider-button:not(.fashion-slider-button-disabled):hover .fashion-slider-svg-circle-wrap {
+            transform: scale(1.1)
+        }
+
+        .fashion-slider-button:not(.fashion-slider-button-disabled):hover circle {
+            stroke-dasharray: 4px;
+            stroke-dashoffset: 4px;
+            opacity: 1
+        }
+
+        .fashion-slider-button:not(.fashion-slider-button-disabled):hover .fashion-slider-svg-arrow {
+            transform: rotateY(180deg) translate(-40px, 36.1px) scale(1.75)
+        }
+
+        .fashion-slider-button:not(.fashion-slider-button-disabled):hover .fashion-slider-svg-line {
+            transform: translate(35px, 42px) scaleX(.5)
+        }
+
+        .fashion-slider {
+            --fashion-slider-title-font-size: 88px
+        }
+
+        @media (max-width: 480px) {
+            .fashion-slider {
+                --fashion-slider-title-font-size: 60px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== SECTION 1: OUR ACADEMIC STREAMS (Card Grid) ===================== -->
+
+    <section class="py-10 md:py-14 relative overflow-hidden bg-gradient-to-b from-white to-[#f0f4ff]"
+        style="min-height: 80vh;" id="academic-streams-grid">
+
+        <div class="w-full px-4 sm:px-6 lg:px-20 relative z-10">
+
+            <!-- Header -->
+            <div class="text-center mb-8 md:mb-12">
+                <p class="text-[#2563eb] font-bold text-xs uppercase tracking-[0.25em] mb-3">Programs We Offer</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-[#003399] leading-tight mb-3">
+                    Choose Your <span
+                        class="bg-gradient-to-r from-[#2563eb] to-[#1e40af] bg-clip-text text-transparent">Stream</span>
+                </h2>
+                <p class="text-slate-500 text-sm max-w-xl mx-auto">7 diverse academic streams across Engineering,
+                    Management, Pharmacy, Law, Commerce & more</p>
+                <div class="flex items-center justify-center gap-2 mt-4">
+                    <div class="w-10 h-1 bg-gradient-to-r from-transparent to-[#FFB800] rounded-full"></div>
+                    <div class="w-16 h-1.5 bg-gradient-to-r from-[#2563eb] to-[#1e40af] rounded-full"></div>
+                    <div class="w-10 h-1 bg-gradient-to-l from-transparent to-[#FFB800] rounded-full"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
+
+                <!-- Engineering -->
+                <div
+                    class="stream-pill w-full h-full flex flex-col bg-gradient-to-br from-[#2563eb] to-[#1e40af] rounded-2xl p-6 relative overflow-hidden cursor-pointer group">
+                    <div
+                        class="absolute top-3 right-3 text-white/10 text-7xl font-black leading-none pointer-events-none">
+                        01</div>
+                    <div
+                        class="absolute bottom-0 right-0 w-28 h-28 bg-white/5 rounded-full translate-x-1/4 translate-y-1/4">
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/25 transition-colors">
+                        <i class="fa-solid fa-microchip text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-white font-extrabold text-lg mb-1">Engineering</h3>
+                    <p class="text-blue-200/70 text-[11px] mb-4 leading-relaxed">B.Tech — CSE, IT, ME, CE, EE with AI &
+                        Data Science specializations</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-white/50 text-[10px] uppercase tracking-wider"><i
+                                class="fa-regular fa-clock mr-1"></i>4 Years</span>
+                        <span
+                            class="inline-block px-2.5 py-1 bg-[#FFB800] text-[#003399] text-[9px] font-black rounded-full uppercase">Popular</span>
+                    </div>
+                </div>
+
+                <!-- Management -->
+                <div
+                    class="stream-pill w-full h-full flex flex-col bg-white rounded-2xl p-6 border border-slate-100 relative overflow-hidden cursor-pointer group">
+                    <div
+                        class="absolute top-3 right-3 text-slate-100 text-7xl font-black leading-none pointer-events-none">
+                        02</div>
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FFB800] to-[#FFB800]/30 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-[#FFB800]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#FFB800]/20 transition-colors">
+                        <i class="fa-solid fa-chart-line text-[#FFB800] text-xl"></i>
+                    </div>
+                    <h3 class="text-[#003399] font-extrabold text-lg mb-1">Management</h3>
+                    <p class="text-slate-400 text-[11px] mb-4 leading-relaxed">PGDM, MBA & BBA — leadership &
+                        industry-integrated programs</p>
+                    <span class="text-slate-400 text-[10px] uppercase tracking-wider"><i
+                            class="fa-regular fa-clock mr-1"></i>2–3 Years</span>
+                </div>
+
+                <!-- Computer Applications -->
+                <div
+                    class="stream-pill w-full h-full flex flex-col bg-white rounded-2xl p-6 border border-slate-100 relative overflow-hidden cursor-pointer group">
+                    <div
+                        class="absolute top-3 right-3 text-slate-100 text-7xl font-black leading-none pointer-events-none">
+                        03</div>
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2563eb] to-[#2563eb]/30 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
+                        <i class="fa-solid fa-laptop-code text-[#2563eb] text-xl"></i>
+                    </div>
+                    <h3 class="text-[#003399] font-extrabold text-lg mb-1">Computer Applications</h3>
+                    <p class="text-slate-400 text-[11px] mb-4 leading-relaxed">BCA & MCA — full-stack, cloud & app
+                        development</p>
+                    <span class="text-slate-400 text-[10px] uppercase tracking-wider"><i
+                            class="fa-regular fa-clock mr-1"></i>3 Years</span>
+                </div>
+
+                <!-- Pharmacy -->
+                <div
+                    class="stream-pill w-full h-full flex flex-col bg-gradient-to-br from-[#059669] to-[#047857] rounded-2xl p-6 relative overflow-hidden cursor-pointer group">
+                    <div
+                        class="absolute top-3 right-3 text-white/10 text-7xl font-black leading-none pointer-events-none">
+                        04</div>
+                    <div
+                        class="absolute bottom-0 right-0 w-28 h-28 bg-white/5 rounded-full translate-x-1/4 translate-y-1/4">
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/25 transition-colors">
+                        <i class="fa-solid fa-capsules text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-white font-extrabold text-lg mb-1">Pharmacy</h3>
+                    <p class="text-emerald-100/70 text-[11px] mb-4 leading-relaxed">B.Pharm, D.Pharm & M.Pharm — PCI
+                        approved, advanced research labs</p>
+                    <span class="text-white/50 text-[10px] uppercase tracking-wider"><i
+                            class="fa-regular fa-clock mr-1"></i>2–4 Years</span>
+                </div>
+
+                <!-- Law -->
+                <div
+                    class="stream-pill w-full h-full flex flex-col bg-white rounded-2xl p-6 border border-slate-100 relative overflow-hidden cursor-pointer group">
+                    <div
+                        class="absolute top-3 right-3 text-slate-100 text-7xl font-black leading-none pointer-events-none">
+                        05</div>
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#7c3aed] to-[#7c3aed]/30 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-violet-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-violet-100 transition-colors">
+                        <i class="fa-solid fa-scale-balanced text-[#7c3aed] text-xl"></i>
+                    </div>
+                    <h3 class="text-[#003399] font-extrabold text-lg mb-1">Law</h3>
+                    <p class="text-slate-400 text-[11px] mb-4 leading-relaxed">BA LLB & LLB — BCI approved, moot courts
+                        & legal clinics</p>
+                    <span class="text-slate-400 text-[10px] uppercase tracking-wider"><i
+                            class="fa-regular fa-clock mr-1"></i>3–5 Years</span>
+                </div>
+
+                <!-- Commerce -->
+                <div
+                    class="stream-pill w-full h-full flex flex-col bg-gradient-to-br from-[#FFB800] to-[#e6a600] rounded-2xl p-6 relative overflow-hidden cursor-pointer group">
+                    <div
+                        class="absolute top-3 right-3 text-white/10 text-7xl font-black leading-none pointer-events-none">
+                        06</div>
+                    <div
+                        class="absolute bottom-0 right-0 w-28 h-28 bg-white/5 rounded-full translate-x-1/4 translate-y-1/4">
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/30 transition-colors">
+                        <i class="fa-solid fa-coins text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-white font-extrabold text-lg mb-1">Commerce</h3>
+                    <p class="text-yellow-100/80 text-[11px] mb-4 leading-relaxed">B.Com (Hons) — CA/CS foundation,
+                        accounting & finance</p>
+                    <span class="text-white/60 text-[10px] uppercase tracking-wider"><i
+                            class="fa-regular fa-clock mr-1"></i>3 Years</span>
+                </div>
+
+                <!-- Polytechnic -->
+                <div
+                    class="stream-pill w-full h-full flex flex-col bg-white rounded-2xl p-6 border border-slate-100 relative overflow-hidden cursor-pointer group">
+                    <div
+                        class="absolute top-3 right-3 text-slate-100 text-7xl font-black leading-none pointer-events-none">
+                        07</div>
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#f97316] to-[#f97316]/30 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-100 transition-colors">
+                        <i class="fa-solid fa-gear text-[#f97316] text-xl"></i>
+                    </div>
+                    <h3 class="text-[#003399] font-extrabold text-lg mb-1">Polytechnic</h3>
+                    <p class="text-slate-400 text-[11px] mb-4 leading-relaxed">Diploma in Engineering — hands-on
+                        technical training after 10th</p>
+                    <span class="text-slate-400 text-[10px] uppercase tracking-wider"><i
+                            class="fa-regular fa-clock mr-1"></i>3 Years</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="w-full px-4 sm:px-6 lg:px-20 mt-8">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="https://admissions.accurate.in/" target="_blank"
+                    class="group px-8 py-3.5 bg-gradient-to-r from-[#2563eb] to-[#1e40af] text-white rounded-xl font-bold text-sm transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-300/30 flex items-center gap-2">
+                    Apply Now 2026
+                    <span
+                        class="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all">
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                </a>
+                <a href="tel:+91 9899569090"
+                    class="px-8 py-3.5 bg-white border-2 border-[#2563eb] text-[#2563eb] rounded-xl font-bold text-sm transition-all duration-300 hover:scale-105 hover:bg-[#2563eb] hover:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    Talk to a Counsellor
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ===================== OUR ACADEMIC STREAMS SECTION ENDS ===================== -->
+
+
+
+    <!-- ===================== SECTION 2: EXPLORE OUR STREAMS (Bento Grid) ===================== -->
+
+    <section class="py-8 md:py-12 relative overflow-hidden bg-white" style="min-height: 80vh;"
+        id="explore-streams-bento">
+        <!-- Asymmetric background split -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-[#f0f4ff] hidden lg:block"
+            style="clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);"></div>
+        <div class="absolute bottom-0 left-0 w-40 h-40 bg-[#FFB800]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="w-full px-4 sm:px-6 lg:px-20 relative z-10">
+
+            <!-- Header — left-aligned on desktop for a non-template feel -->
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 md:mb-14 gap-4">
+                <div class="max-w-2xl">
+                    <p class="text-[#2563eb] font-bold text-sm uppercase tracking-[0.2em] mb-2">What We Offer</p>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-[#003399] leading-tight">
+                        Explore Our<br class="hidden md:block" />
+                        <span class="relative inline-block">
+                            <span class="relative z-10">Academic Streams</span>
+                            <span class="absolute bottom-1 left-0 w-full h-3 bg-[#FFB800]/25 -z-0 rounded-sm"></span>
+                        </span>
+                    </h2>
+                </div>
+                <p class="text-slate-500 text-sm md:text-base max-w-md lg:text-right leading-relaxed">
+                    From engineering to pharmacy, management to law — discover the pathway that shapes your career.
+                </p>
+            </div>
+
+            <!-- Bento-style Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+
+                <!-- FEATURED: Engineering — spans 2 cols -->
+                <div
+                    class="stream-card lg:col-span-2 group relative bg-gradient-to-br from-[#003399] to-[#1e40af] rounded-2xl p-7 md:p-8 cursor-pointer overflow-hidden min-h-[200px] flex flex-col justify-end">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/3 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 w-12 h-12 border border-white/20 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-microchip text-white/60 text-lg"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <span
+                            class="inline-block px-3 py-1 bg-[#FFB800] text-[#003399] text-[10px] font-black uppercase tracking-wider rounded-full mb-3">Most
+                            Popular</span>
+                        <h3 class="text-white text-2xl md:text-3xl font-extrabold mb-2">Engineering & Technology</h3>
+                        <p class="text-blue-200/80 text-sm mb-4 max-w-md">B.Tech in CSE, IT, ME, CE, EE & more — with
+                            specializations in AI, Data Science, and Cloud Computing.</p>
+                        <div class="flex items-center gap-4 text-xs text-blue-200/60">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 4 Years</span>
+                            <span><i class="fa-solid fa-graduation-cap mr-1"></i> B.Tech</span>
+                            <span class="stream-arrow text-[#FFB800] font-bold">Explore →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Management -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-[#FFB800] rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-[#FFB800]/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-chart-line text-[#FFB800] text-lg"></i>
+                        </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Management</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">PGDM, MBA & BBA — leadership-focused
+                            programs with industry mentoring.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>2-3 Years</span>
+                            <span class="stream-arrow text-[#FFB800] font-bold text-xs normal-case">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computer Applications -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-[#2563eb] rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-laptop-code text-[#2563eb] text-lg"></i>
+                        </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Computer Applications</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">BCA & MCA — build full-stack, cloud & app
+                            development expertise.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>3 Years</span>
+                            <span class="stream-arrow text-[#2563eb] font-bold text-xs normal-case">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pharmacy -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-emerald-500 rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-emerald-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-capsules text-emerald-500 text-lg"></i>
+                        </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Pharmacy</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">B.Pharm, D.Pharm & M.Pharm — PCI approved
+                            with advanced labs.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>2-4 Years</span>
+                            <span class="stream-arrow text-emerald-500 font-bold text-xs normal-case">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FEATURED: Law — spans 2 cols -->
+                <div
+                    class="stream-card lg:col-span-2 group relative bg-gradient-to-br from-[#1e40af] to-[#2563eb] rounded-2xl p-7 md:p-8 cursor-pointer overflow-hidden min-h-[180px] flex flex-col justify-end">
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 border border-white/10 rounded-full -translate-y-1/3 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 w-12 h-12 border border-white/15 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-scale-balanced text-[#FFB800]/60 text-lg"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-white text-2xl font-extrabold mb-2">Law & Legal Studies</h3>
+                        <p class="text-blue-100/70 text-sm mb-3 max-w-md">BCI-approved integrated & regular law programs
+                            preparing future legal professionals & advocates.</p>
+                        <div class="flex items-center gap-4 text-xs text-blue-200/60">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 3-5 Years</span>
+                            <span><i class="fa-solid fa-graduation-cap mr-1"></i> BA LLB / LLB</span>
+                            <span class="stream-arrow text-[#FFB800] font-bold">Explore →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commerce -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-violet-500 rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-violet-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-coins text-violet-500 text-lg"></i>
+                        </div>
+                        <h3 class="text-[#003399] font-extrabold text-lg mb-1">Commerce</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">B.Com (Hons) — accounting, finance &
+                            taxation with CA/CS foundation.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>3 Years</span>
+                            <span class="stream-arrow text-violet-500 font-bold text-xs normal-case">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polytechnic -->
+                <div
+                    class="stream-card group relative bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer">
+                    <div class="stream-stripe absolute top-0 left-0 w-1.5 h-12 bg-orange-500 rounded-r-full"></div>
+                    <div class="p-6">
+                        <div class="w-11 h-11 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-gear text-orange-500 text-lg"></i>
+                        </div>
+                        <h3 class="text-slate-900 font-extrabold text-lg mb-1">Polytechnic</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">Diploma in Engineering — hands-on
+                            technical training after 10th.</p>
+                        <div
+                            class="flex items-center justify-between text-[10px] text-slate-400 uppercase tracking-wider">
+                            <span>3 Years</span>
+                            <span class="stream-arrow text-orange-500 font-bold text-xs normal-case">→</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA strip -->
+            <div
+                class="mt-8 flex flex-col sm:flex-row items-center justify-between bg-slate-50 rounded-xl p-5 md:p-6 gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-phone text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <p class="text-[#003399] font-bold text-sm">Not sure which stream is right for you?</p>
+                        <p class="text-slate-400 text-xs">Talk to our counsellors — we'll help you find the perfect fit.
+                        </p>
+                    </div>
+                </div>
+                <a href="https://admissions.accurate.in/" target="_blank"
+                    class="px-6 py-3 bg-[#2563eb] hover:bg-[#1e40af] text-white rounded-lg font-bold text-sm transition-all duration-300 flex-shrink-0 hover:scale-105">
+                    Get Counselling <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ===================== EXPLORE OUR STREAMS SECTION ENDS ===================== -->
+
+
+
+    <!-- ===================== SECTION 3: FASHION SLIDER (Stream Slider) ===================== -->
+
+    <section
+        class="w-full relative py-12 md:py-16 bg-[#F0F4FF] overflow-hidden shadow-inner bg-gradient-to-b from-[#F0F4FF] to-white"
+        id="specializations">
+        <div class="max-w-7xl mx-auto px-4 mb-8 relative z-10 flex flex-col md:flex-row justify-between items-end">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#003399] uppercase mb-2 drop-shadow-sm">
+                    What we Offer</h2>
+                <p class="text-sm text-gray-600 font-medium">Explore our industry-oriented Streams</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10 h-[500px] md:h-[600px]">
+            <!-- Fashion slider container -->
+            <div
+                class="fashion-slider rounded-2xl overflow-hidden shadow-2xl relative w-full h-full border-[6px] border-white">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide flex flex-col md:flex-row items-center justify-between px-10 md:px-24 gap-8"
+                            data-slide-bg-color="#1B46BC">
+                            <div class="w-full md:w-1/2 flex flex-col justify-center items-start text-left z-20"
+                                data-swiper-parallax="-130%">
+                                <div class="fashion-slider-title !relative">
+                                    <div class="fashion-slider-title-text text-[35px] md:text-[50px] lg:text-[70px] leading-[1.1] font-poppins text-left"
+                                        style="white-space: normal;">Computer Science<br>& Engineering</div>
+                                </div>
+                                <p
+                                    class="text-white text-sm md:text-base mt-2 font-medium max-w-lg drop-shadow-md mb-2">
+                                    Master the fundamentals of computing, software development, and modern
+                                    technologies
+                                    to build the future of tech.
+                                </p>
+                                <button
+                                    class="mt-4 px-8 py-3 bg-white text-[#1B46BC] font-bold rounded-full shadow-lg hover:bg-gray-100 transition-transform hover:scale-105">Explore
+                                    Program</button>
+                            </div>
+                            <div
+                                class="w-full md:w-1/2 h-[50%] md:h-[80%] relative z-10 flex justify-center items-center">
+                                <div class="fashion-slider-scale rounded-2xl shadow-2xl overflow-hidden"
+                                    style="position: relative; width: 100%; height: 100%;">
+                                    <img src="https://www.accurate.in/engg/img/classrooms/classroom4.webp" alt="CSE">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide flex flex-col md:flex-row items-center justify-between px-10 md:px-24 gap-8"
+                            data-slide-bg-color="#FACC15">
+                            <div class="w-full md:w-1/2 flex flex-col justify-center items-start text-left z-20"
+                                data-swiper-parallax="-130%">
+                                <div class="fashion-slider-title !relative">
+                                    <div class="fashion-slider-title-text text-[35px] md:text-[50px] lg:text-[70px] leading-[1.1] font-poppins text-left"
+                                        style="white-space: normal;">CSE<br>(AI & ML)</div>
+                                </div>
+                                <p
+                                    class="text-white text-sm md:text-base mt-2 font-medium max-w-lg drop-shadow-md text-shadow mb-2">
+                                    Dive into the world of Artificial Intelligence and Machine Learning to create
+                                    smart,
+                                    data-driven solutions.
+                                </p>
+                                <button
+                                    class="mt-4 px-8 py-3 bg-white text-[#b5920b] font-bold rounded-full shadow-lg hover:bg-gray-100 transition-transform hover:scale-105">Explore
+                                    Program</button>
+                            </div>
+                            <div
+                                class="w-full md:w-1/2 h-[50%] md:h-[80%] relative z-10 flex justify-center items-center">
+                                <div class="fashion-slider-scale rounded-2xl shadow-2xl overflow-hidden"
+                                    style="position: relative; width: 100%; height: 100%;">
+                                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000"
+                                        alt="AI ML">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide flex flex-col md:flex-row items-center justify-between px-10 md:px-24 gap-8"
+                            data-slide-bg-color="#102d7a">
+                            <div class="w-full md:w-1/2 flex flex-col justify-center items-start text-left z-20"
+                                data-swiper-parallax="-130%">
+                                <div class="fashion-slider-title !relative">
+                                    <div class="fashion-slider-title-text text-[35px] md:text-[50px] lg:text-[70px] leading-[1.1] font-poppins text-left"
+                                        style="white-space: normal;">Mechanical<br>Engineering</div>
+                                </div>
+                                <p
+                                    class="text-white text-sm md:text-base mt-2 font-medium max-w-lg drop-shadow-md mb-2">
+                                    Design, analyze, and manufacture cutting-edge mechanical systems shaping the
+                                    future
+                                    of industries.
+                                </p>
+                                <button
+                                    class="mt-4 px-8 py-3 bg-white text-[#102d7a] font-bold rounded-full shadow-lg hover:bg-gray-100 transition-transform hover:scale-105">Explore
+                                    Program</button>
+                            </div>
+                            <div
+                                class="w-full md:w-1/2 h-[50%] md:h-[80%] relative z-10 flex justify-center items-center">
+                                <div class="fashion-slider-scale rounded-2xl shadow-2xl overflow-hidden"
+                                    style="position: relative; width: 100%; height: 100%;">
+                                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000"
+                                        alt="Mechanical">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide flex flex-col md:flex-row items-center justify-between px-10 md:px-24 gap-8"
+                            data-slide-bg-color="#4B5563">
+                            <div class="w-full md:w-1/2 flex flex-col justify-center items-start text-left z-20"
+                                data-swiper-parallax="-130%">
+                                <div class="fashion-slider-title !relative">
+                                    <div class="fashion-slider-title-text text-[35px] md:text-[50px] lg:text-[70px] leading-[1.1] font-poppins text-left"
+                                        style="white-space: normal;">Electronics &<br>Communication</div>
+                                </div>
+                                <p
+                                    class="text-white text-sm md:text-base mt-2 font-medium max-w-lg drop-shadow-md mb-2">
+                                    Pioneer advancements in core electronics, embedded systems, and modern
+                                    communication
+                                    networks.
+                                </p>
+                                <button
+                                    class="mt-4 px-8 py-3 bg-white text-[#4B5563] font-bold rounded-full shadow-lg hover:bg-gray-100 transition-transform hover:scale-105">Explore
+                                    Program</button>
+                            </div>
+                            <div
+                                class="w-full md:w-1/2 h-[50%] md:h-[80%] relative z-10 flex justify-center items-center">
+                                <div class="fashion-slider-scale rounded-2xl shadow-2xl overflow-hidden"
+                                    style="position: relative; width: 100%; height: 100%;">
+                                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abf0ceea?auto=format&fit=crop&q=80&w=2000"
+                                        alt="ECE">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- left/previous navigation button -->
+                    <div class="fashion-slider-button-prev fashion-slider-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                            <g class="fashion-slider-svg-wrap">
+                                <g class="fashion-slider-svg-circle-wrap">
+                                    <circle cx="42" cy="42" r="40"></circle>
+                                </g>
+                                <path class="fashion-slider-svg-arrow"
+                                    d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z"></path>
+                                <path class="fashion-slider-svg-line" d="M80,0H0"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <!-- right/next navigation button -->
+                    <div class="fashion-slider-button-next fashion-slider-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                            <g class="fashion-slider-svg-wrap">
+                                <g class="fashion-slider-svg-circle-wrap">
+                                    <circle cx="42" cy="42" r="40"></circle>
+                                </g>
+                                <path class="fashion-slider-svg-arrow"
+                                    d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z"></path>
+                                <path class="fashion-slider-svg-line" d="M80,0H0"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===================== FASHION SLIDER SECTION ENDS ===================== -->
+
+
+
+    <!-- ===================== ALL JAVASCRIPT ===================== -->
+    <script>
+        // ============================================
+        // Fashion Slider JavaScript
+        // ============================================
+        function FashionSlider(s) {
+            let t = !1,
+                i = !1,
+                r;
+            const n = u => {
+                u.classList.add("fashion-slider-no-transition"), i = !0, cancelAnimationFrame(r), r = requestAnimationFrame(() => {
+                    u.classList.remove("fashion-slider-no-transition"), i = !1, t = !1
+                })
+            };
+            let l;
+            const o = () => {
+                t || l.slideNext()
+            },
+                a = () => {
+                    t || l.slidePrev()
+                },
+                d = u => {
+                    u.el.querySelector(".fashion-slider-button-next").addEventListener("click", o), u.el.querySelector(".fashion-slider-button-prev").addEventListener("click", a)
+                },
+                p = u => {
+                    u.el.querySelector(".fashion-slider-button-next").removeEventListener("click", o), u.el.querySelector(".fashion-slider-button-prev").removeEventListener("click", a)
+                };
+            let c;
+            l = new Swiper(s, {
+                direction: "horizontal",
+                speed: 1300,
+                allowTouchMove: !1,
+                parallax: !0,
+                on: {
+                    loopFix() {
+                        c = !1
+                    },
+                    transitionStart(u) {
+                        if (u.params.loop) {
+                            if (c) return;
+                            c || (c = !0)
+                        }
+                        const { slides: m, previousIndex: h, activeIndex: b, el: S } = u;
+                        i || (t = !0);
+                        const g = m[b],
+                            v = m[h],
+                            E = v.querySelector(".fashion-slider-scale"),
+                            w = v.querySelector("img"),
+                            I = g.querySelector("img"),
+                            M = b - h,
+                            y = g.getAttribute("data-slide-bg-color");
+                        S.style["background-color"] = y, E.style.transform = "scale(0.6)", w.style.transitionDuration = "1000ms", w.style.transform = "scale(1.2)";
+                        const L = v.querySelector(".fashion-slider-title-text");
+                        L.style.transition = "1000ms", L.style.color = "rgba(255,255,255,0)";
+                        const x = T => {
+                            T.target === w && (w.removeEventListener("transitionend", x), I.style.transitionDuration = "1300ms", I.style.transform = "translate3d(0, 0, 0) scale(1.2)", w.style.transitionDuration = "1300ms", w.style.transform = `translate3d(${60 * M * (u.isHorizontal() ? 1 : 0)}%, ${60 * M * (u.isHorizontal() ? 0 : 1)}%, 0)  scale(1.2)`)
+                        };
+                        w.addEventListener("transitionend", x)
+                    },
+                    transitionEnd(u) {
+                        const { slides: f, activeIndex: m, el: h } = u,
+                            b = f[m],
+                            S = b.querySelector("img"),
+                            g = u.params.loop;
+                        b.querySelector(".fashion-slider-scale").style.transform = "scale(1)", S.style.transitionDuration = "1000ms", S.style.transform = "scale(1)";
+                        const v = b.querySelector(".fashion-slider-title-text");
+                        v.style.transition = "1000ms", v.style.color = "rgba(255,255,255,1)";
+                        const E = w => {
+                            w.target === S && (S.removeEventListener("transitionend", E), t = !1)
+                        };
+                        S.addEventListener("transitionend", E), g || (m === 0 ? h.querySelector(".fashion-slider-button-prev").classList.add("fashion-slider-button-disabled") : h.querySelector(".fashion-slider-button-prev").classList.remove("fashion-slider-button-disabled"), m === f.length - 1 ? h.querySelector(".fashion-slider-button-next").classList.add("fashion-slider-button-disabled") : h.querySelector(".fashion-slider-button-next").classList.remove("fashion-slider-button-disabled"))
+                    },
+                    beforeInit(u) {
+                        const { el: f } = u;
+                        n(f)
+                    },
+                    init(u) {
+                        const { slides: f, activeIndex: m, el: h } = u, b = f[m].getAttribute("data-slide-bg-color");
+                        h.style["background-color"] = b, u.emit("transitionEnd"), d(u)
+                    },
+                    resize(u) {
+                        n(u.el)
+                    },
+                    destroy(u) {
+                        p(u)
+                    }
+                }
+            })
+            return l;
+        }
+
+        // Initialize Fashion Slider on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            const qt = document.querySelector(".fashion-slider .swiper");
+            if (qt) {
+                FashionSlider(qt);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
