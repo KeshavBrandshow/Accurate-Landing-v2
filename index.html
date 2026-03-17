@@ -101,11 +101,11 @@
 <body class="bg-slate-50 overflow-x-hidden">
     <nav id="main-nav" class="bg-transparent border-b border-transparent fixed top-0 left-0 w-full z-50 py-4 lg:py-0">
         <!-- Top Menu for md/lg screens -->
-        <div class="hidden md:flex justify-end items-center max-w-8xl mx-auto px-4 py-2 w-full">
+        <div class="hidden md:flex justify-end items-center max-w-8xl mx-auto px-4 pt-2 w-full">
             <div class="flex items-center">
                 <div class="pl-2">
                     <a href="tel:+919899569090"
-                        class="bg-[#2549bf] text-white px-5 lg:px-2 xl:px-4 py-3 lg:py-2 xl:py-3 rounded-lg font-bold text-sm lg:text-[10px] xl:text-xs shadow-lg hover:bg-blue-800 transition-all whitespace-nowrap flex items-center gap-2">
+                        class="bg-[#2549bf] text-white px-5 lg:px-2 xl:px-4 py-3 lg:py-2 xl:py-2 rounded-lg font-bold text-sm lg:text-[10px] xl:text-xs shadow-lg hover:bg-blue-800 transition-all whitespace-nowrap flex items-center gap-2">
                         <i class="fa-solid fa-phone"></i>
                         <span>+91 98995 69090</span>
                     </a>
@@ -150,7 +150,7 @@
 
                     <div class="flex items-center">
                         <div class="">
-                            <img src="images/accurate-logo.webp" alt="" srcset="" width="320">
+                            <img id="nav-logo" src="images/accurate-white-logo.png" alt="Accurate Logo" width="320">
                         </div>
                         <div class="hidden xl:flex items-center gap-1 ml-2 border-l border-white/20 pl-1">
                             <img src="images/naac.png" alt="NAAC"
@@ -6626,10 +6626,13 @@
     <script>
         window.addEventListener('scroll', function () {
             const nav = document.getElementById('main-nav');
+            const logo = document.getElementById('nav-logo');
             if (window.scrollY > 50) {
                 nav.classList.add('nav-scrolled');
+                logo.src = 'images/accurate-logo.webp';
             } else {
                 nav.classList.remove('nav-scrolled');
+                logo.src = 'images/accurate-white-logo.png';
             }
         });
     </script>
